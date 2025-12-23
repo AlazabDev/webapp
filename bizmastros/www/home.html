@@ -4,7 +4,7 @@
 
 {% block content %}
 <section class="container py-5">
-  <h2 class="text-center fw-bold mb-4">Our Services</h2>
+  <h2 class="text-center fw-bold mb-4" id="Services">Our Services</h2>
 
   <div class="row">
     {% for service in services %}
@@ -16,7 +16,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ service.service_name }}</h5>
           <p class="card-text">{{ service.short_description }}</p>
-          <a href="/services/{{ service.route }}" class="btn btn-outline-primary">
+          <a href="/{{ service.route }}" class="btn btn-outline-primary">
             Read More
           </a>
         </div>

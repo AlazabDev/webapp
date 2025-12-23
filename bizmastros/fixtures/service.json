@@ -3,52 +3,52 @@
     "doctype": "Service",
     "name": "income-tax-filing-advisory",
     "service_name": "Income Tax Filing & Advisory",
-    "short_description": "Accurate income tax filing with expert tax planning.",
-    "description": "<p>We provide end-to-end income tax services for individuals, professionals, and businesses.</p><ul><li>ITR filing (Individuals & Firms)</li><li>Tax planning & savings</li><li>Notices & scrutiny handling</li></ul>",
+    "short_description": "Accurate, compliant, and optimized income tax filing with expert advisory support.",
+    "description": "<p>Our <strong>Income Tax Filing & Advisory</strong> services ensure complete compliance with Indian tax laws while helping individuals and businesses legally minimize their tax liabilities. We provide reliable, timely, and professional tax solutions backed by experienced Chartered Accountants.</p><h4>Scope of Services</h4><ul><li>Income Tax Return (ITR) filing for individuals, professionals, firms, and companies</li><li>Advance tax and self-assessment tax computation</li><li>Tax planning and savings advisory</li><li>Capital gains tax advisory</li><li>Income tax notices, scrutiny, and assessment handling</li></ul><h4>Why Choose Us</h4><ul><li>Experienced Chartered Accountants</li><li>Latest tax law compliance</li><li>Secure data handling</li><li>Transparent pricing</li></ul>",
     "icon": "bi bi-receipt",
     "service_image": "/assets/bizmastros/images/ey-1.webp",
     "published": 1,
     "route": "income",
-    "meta_title": "Income Tax Filing & Advisory Services in India",
-    "meta_description": "Professional income tax filing and advisory services by experienced Chartered Accountants."
+    "meta_title": "Income Tax Filing & Advisory Services in India | BizMastros",
+    "meta_description": "Professional income tax filing, tax planning, and advisory services in India by experienced Chartered Accountants."
   },
   {
     "doctype": "Service",
     "name": "gst-registration-compliance",
     "service_name": "GST Registration & Compliance",
-    "short_description": "Complete GST services from registration to returns.",
-    "description": "<p>We help businesses stay compliant with GST regulations and filings.</p><ul><li>GST registration</li><li>Monthly & annual returns</li><li>GST audits & notices</li></ul>",
+    "short_description": "End-to-end GST services covering registration, returns, and compliance.",
+    "description": "<p>Our <strong>GST Registration & Compliance</strong> services help businesses meet all statutory GST requirements efficiently. We manage registrations, filings, reconciliations, and departmental interactions with accuracy and timeliness.</p><h4>GST Services Offered</h4><ul><li>GST registration and amendments</li><li>Monthly, quarterly, and annual GST return filing</li><li>Input tax credit (ITC) reconciliation</li><li>GST audit and compliance review</li><li>GST notices, assessments, and appeals</li></ul><h4>Who Should Opt</h4><ul><li>Startups and MSMEs</li><li>Traders and service providers</li><li>E-commerce sellers</li><li>Manufacturing businesses</li></ul>",
     "icon": "bi bi-journal-text",
     "service_image": "/assets/bizmastros/images/ey-2.webp",
     "published": 1,
     "route": "gst-registration-compliance",
-    "meta_title": "GST Registration & Compliance Services",
-    "meta_description": "GST registration, return filing, and compliance services for Indian businesses."
+    "meta_title": "GST Registration & Compliance Services in India | BizMastros",
+    "meta_description": "Expert GST registration, return filing, audit, and compliance services for Indian businesses."
   },
   {
     "doctype": "Service",
     "name": "accounting-bookkeeping-services",
     "service_name": "Accounting & Bookkeeping",
-    "short_description": "Reliable accounting and bookkeeping solutions.",
-    "description": "<p>We maintain accurate books of accounts to support compliance and business growth.</p><ul><li>Day-to-day bookkeeping</li><li>Ledger & reconciliation</li><li>Financial statements</li></ul>",
+    "short_description": "Accurate accounting and bookkeeping for compliance-driven businesses.",
+    "description": "<p>Our <strong>Accounting & Bookkeeping</strong> services ensure reliable financial records that support statutory compliance and informed decision-making. We maintain books aligned with accounting standards and regulatory requirements.</p><h4>Accounting Solutions</h4><ul><li>Day-to-day bookkeeping</li><li>Ledger maintenance and bank reconciliation</li><li>Accounts payable and receivable management</li><li>Monthly and annual financial statements</li><li>Management information system (MIS) reporting</li></ul><h4>Benefits</h4><ul><li>Accurate financial visibility</li><li>Regulatory compliance</li><li>Cost-effective accounting support</li></ul>",
     "icon": "bi bi-calculator",
     "service_image": "/assets/bizmastros/images/ey-3.webp",
     "published": 1,
     "route": "accounting-bookkeeping-services",
-    "meta_title": "Accounting & Bookkeeping Services",
-    "meta_description": "Professional accounting and bookkeeping services for small and medium businesses."
+    "meta_title": "Accounting & Bookkeeping Services in India | BizMastros",
+    "meta_description": "Professional accounting, bookkeeping, and financial reporting services for businesses in India."
   },
   {
     "doctype": "Service",
     "name": "audit-assurance-services",
     "service_name": "Audit & Assurance",
-    "short_description": "Statutory, internal, and tax audits.",
-    "description": "<p>We offer comprehensive audit and assurance services to ensure compliance and transparency.</p><ul><li>Statutory audit</li><li>Internal audit</li><li>Tax audit</li></ul>",
+    "short_description": "Independent audits ensuring compliance, transparency, and trust.",
+    "description": "<p>Our <strong>Audit & Assurance</strong> services provide independent evaluation of financial records, internal controls, and statutory compliance. We help organizations enhance credibility and meet regulatory obligations.</p><h4>Audit Services</h4><ul><li>Statutory audit as per Companies Act</li><li>Internal audit and risk assessment</li><li>Tax audit under Income Tax Act</li><li>Compliance and process audits</li><li>Audit reporting and advisory support</li></ul><h4>Our Approach</h4><ul><li>Independent and objective assessment</li><li>Strong regulatory expertise</li><li>Risk-focused audit methodology</li></ul>",
     "icon": "bi bi-shield-check",
     "service_image": "/assets/bizmastros/images/ey-4.webp",
     "published": 1,
     "route": "audit-assurance-services",
-    "meta_title": "Audit & Assurance Services",
-    "meta_description": "Statutory, internal, and tax audit services by qualified Chartered Accountants."
+    "meta_title": "Audit & Assurance Services in India | BizMastros",
+    "meta_description": "Statutory audit, internal audit, and tax audit services by qualified Chartered Accountants."
   }
 ]

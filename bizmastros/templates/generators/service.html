@@ -1,24 +1,52 @@
-{% extends "templates/base.html" %}
+{% extends "bizmastros/templates/base.html" %}
+
+{% block title %}
+{{ doc.service_name }}
+{% endblock %}
 
 {% block content %}
 
-<section class="container py-5">
-  <div class="row">
-    <div class="col-md-12">
-
-      <h1 class="fw-bold mb-3" id={{doc.service_name}}>{{ doc.service_name }}</h1>
-
-      <p class="text-muted">
-        {{ doc.short_description }}
-      </p>
-
-      <hr>
-
-      <div class="mt-4">
-        {{ doc.description }}
+<!-- Hero Section -->
+<section class="bg-light py-5 border-bottom">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-7">
+        <h1 class="fw-bold mb-3" id="{{ doc.name }}">{{ doc.service_name }}</h1>
+        <p class="lead text-muted">
+          {{ doc.short_description }}
+        </p>
       </div>
-
+      <div class="col-md-5 text-center">
+        {% if doc.service_image %}
+        <img src="{{ doc.service_image }}" alt="{{ doc.service_name }}"
+             class="img-fluid rounded shadow-sm">
+        {% endif %}
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- Service Description -->
+<section class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-9">
+      <div class="service-content">
+        {{ doc.description | safe }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="bg-dark text-light py-5">
+  <div class="container text-center">
+    <h3 class="fw-bold mb-3">Need Expert Tax Assistance?</h3>
+    <p class="mb-4">
+      Get professional income tax filing and advisory support from trusted experts.
+    </p>
+    <a href="/contact" class="btn btn-warning btn-lg px-4">
+      Talk to a Tax Expert
+    </a>
   </div>
 </section>
 

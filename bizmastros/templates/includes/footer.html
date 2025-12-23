@@ -33,31 +33,13 @@
       <div class="col-md-2">
         <h6 class="fw-semibold text-white">Services</h6>
         <ul class="list-unstyled small">
+          {% for service in services %}
           <li class="mb-2">
-            <a href="/services/income-tax-filing-advisory" class="text-light text-decoration-none">
-              Income Tax
+            <a href="/{{ service.route }}#{{ service.name }}" class="text-light text-decoration-none">
+              {{ service.service_name }}
             </a>
           </li>
-          <li class="mb-2">
-            <a href="/services/gst-registration-compliance" class="text-light text-decoration-none">
-              GST Compliance
-            </a>
-          </li>
-          <li class="mb-2">
-            <a href="/services/accounting-bookkeeping-services" class="text-light text-decoration-none">
-              Accounting
-            </a>
-          </li>
-          <li class="mb-2">
-            <a href="/services/audit-assurance-services" class="text-light text-decoration-none">
-              Audit & Assurance
-            </a>
-          </li>
-          <li>
-            <a href="/services/company-registration-roc-compliance" class="text-light text-decoration-none">
-              Company Registration
-            </a>
-          </li>
+          {% endfor %}
         </ul>
       </div>
 
@@ -69,7 +51,7 @@
             <a href="/about" class="text-light text-decoration-none">About Us</a>
           </li>
           <li class="mb-2">
-            <a href="/our-services" class="text-light text-decoration-none">Services</a>
+            <a href="/home#Services" class="text-light text-decoration-none">Services</a>
           </li>
           <li class="mb-2">
             <a href="/contact" class="text-light text-decoration-none">Contact</a>

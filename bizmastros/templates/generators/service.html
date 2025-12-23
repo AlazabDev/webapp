@@ -1,0 +1,25 @@
+{% extends "templates/base.html" %}
+
+{% block content %}
+
+<section class="container py-5">
+  <div class="row">
+    <div class="col-md-12">
+
+      <h1 class="fw-bold mb-3" id={{doc.service_name}}>{{ doc.service_name }}</h1>
+
+      <p class="text-muted">
+        {{ doc.short_description }}
+      </p>
+
+      <hr>
+
+      <div class="mt-4">
+        {{ doc.description }}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

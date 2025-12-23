@@ -1,6 +1,6 @@
 {
   "doctype": "DocType",
-  "name": "Services",
+  "name": "Service",
   "module": "BizMastros",
   "custom": 0,
   "is_submittable": 0,
@@ -45,7 +45,7 @@
       "fieldtype": "Attach Image"
     },
     {
-      "fieldname": "is_published",
+      "fieldname": "published",
       "label": "Published",
       "fieldtype": "Check",
       "default": "1",

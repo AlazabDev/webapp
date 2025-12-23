@@ -2,8 +2,8 @@ import frappe
 
 def website_context(context):
     context.services = frappe.get_all(
-        "Services",
-        filters={"is_published": 1},
+        "Service",
+        filters={"published": 1},
         fields=[
             "name",
             "service_name",

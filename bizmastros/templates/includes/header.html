@@ -18,7 +18,7 @@
                     <a class="nav-link dropdown-toggle" role="button" href="#" data-bs-toggle="dropdown">Services</a>
                     <ul class="dropdown-menu">
                          {% for service in services %}
-                        <li><a class="dropdown-item" href="/services/{{ service.route }}">{{ service.service_name }}</a></li>
+                        <li><a class="dropdown-item" href="/{{ service.route }}#{{ service.service_name }}" id="{{ service.service_name }}">{{ service.service_name }}</a></li>
                         {% endfor %}
                     </ul>
                 </li>

@@ -8,12 +8,12 @@ app_license = "mit"
 
 fixtures = [
     {
-        "doctype": "Services",
+        "doctype": "Service",
         "filters": []
     }
 ]
 
-website_generators = ["Services"]
+website_generators = ["Service"]
 update_website_context = "bizmastros.overrides.website_context"
 homepage = "home"
 

@@ -20,7 +20,8 @@
                     <ul class="dropdown-menu">
                         {% for service in services %}
                         <li><a class="dropdown-item" href="/{{ service.route }}#{{ service.name }}"
-                                id="{{ service.service_name }}">{{ service.service_name }}</a></li>
+                                id="{{ service.service_name }}">{{
+                                service.service_name }}</a></li>
                         {% endfor %}
                     </ul>
                 </li>

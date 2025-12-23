@@ -1,0 +1,97 @@
+{
+  "doctype": "DocType",
+  "name": "Services",
+  "module": "BizMastros",
+  "custom": 0,
+  "is_submittable": 0,
+  "is_tree": 0,
+  "editable_grid": 0,
+  "track_changes": 1,
+  "allow_rename": 0,
+  "allow_import": 1,
+  "allow_guest_to_view": 1,
+  "show_name_in_global_search": 1,
+  "show_title_field_in_link": 1,
+  "title_field": "service_name",
+  "has_web_view": 1,
+  "route": "services",
+  "fields": [
+    {
+      "fieldname": "service_name",
+      "label": "Service Name",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "short_description",
+      "label": "Short Description",
+      "fieldtype": "Small Text",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "description",
+      "label": "Description",
+      "fieldtype": "Text Editor"
+    },
+    {
+      "fieldname": "icon",
+      "label": "Icon (Bootstrap / FontAwesome)",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "service_image",
+      "label": "Service Image",
+      "fieldtype": "Attach Image"
+    },
+    {
+      "fieldname": "is_published",
+      "label": "Published",
+      "fieldtype": "Check",
+      "default": "1",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "route",
+      "label": "Route",
+      "fieldtype": "Data",
+      "unique": 1
+    },
+    {
+      "fieldname": "meta_title",
+      "label": "Meta Title",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "meta_description",
+      "label": "Meta Description",
+      "fieldtype": "Small Text"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Website Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1
+    },
+    {
+      "role": "Guest",
+      "read": 1
+    },
+    {
+      "role": "Website User",
+      "read": 1
+    }
+  ],
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "index_web_pages_for_search": 1
+}

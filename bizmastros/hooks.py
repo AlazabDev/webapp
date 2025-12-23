@@ -5,6 +5,19 @@ app_description = "Company Website for Bizmastro\'s"
 app_email = "ashok777hb@gmail.com"
 app_license = "mit"
 
+
+fixtures = [
+    {
+        "doctype": "Services",
+        "filters": []
+    }
+]
+
+website_generators = ["Services"]
+update_website_context = "bizmastros.overrides.website_context"
+homepage = "home"
+
+
 # Apps
 # ------------------
 

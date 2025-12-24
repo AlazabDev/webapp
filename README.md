@@ -22,8 +22,8 @@ Key Features
 Repository layout
 -----------------
 - [bizmastros](bizmastros): root of the app.
-- [bizmastros/bizmastros/templates](bizmastros/bizmastros/templates): HTML templates and partials.
-- [bizmastros/bizmastros/templates/generators/service.html](bizmastros/bizmastros/templates/generators/service.html): main service page template.
+- [bizmastros/templates](bizmastros/templates): HTML templates and partials.
+- [bizmastros/templates/generators/service.html](bizmastros/templates/generators/service.html): main service page template.
 
 Customization guide
 -------------------

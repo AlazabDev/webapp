@@ -1,8 +1,4 @@
-### Bizmastros
-
-Company Website for Bizmastro\'s
-
-BizMastros — Generic Website Service Template
+Generic Website Service Template
 =============================================
 
 Overview

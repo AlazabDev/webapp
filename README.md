@@ -2,39 +2,81 @@
 
 Company Website for Bizmastro\'s
 
-### Installation
+BizMastros — Generic Website Service Template
+=============================================
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
+Overview
+--------
+This directory contains a small website/service app that provides a generic,
+reusable template for presenting services or offerings. The intent is to keep
+layout, styles and templates separate from content so sites can customize the
+display by updating Service documents or overriding templates.
 
-```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
-bench install-app bizmastros
+Purpose
+-------
+- Provide a flexible service page template that can be adapted to many use cases.
+- Demonstrate how to render Service-style documents into public pages.
+
+Key Features
+------------
+- Service-driven pages: templates render fields from a Service document (title,
+	short description, image, full description).
+- Simple, overridable HTML templates under `templates/` for layout and markup.
+
+Repository layout
+-----------------
+- [apps/bizmastros](apps/bizmastros): root of the app.
+- [apps/bizmastros/bizmastros/templates](apps/bizmastros/bizmastros/templates): HTML templates and partials.
+- [apps/bizmastros/bizmastros/templates/generators/service.html](apps/bizmastros/bizmastros/templates/generators/service.html): main service page template.
+
+Customization guide
+-------------------
+1. Content: Create or update a Service document and populate `service_name`,
+	 `short_description`, `service_image`, and `description`. The template will
+	 render those fields automatically.
+2. Layout: Edit templates in `templates/` to change structure, classes or add
+	 sections. For site-specific branding, override templates in a site app.
+3. CTA and flows: Replace the call-to-action block or link it to your site's
+	 contact/lead capture endpoints.
+
+Development & common commands
+-----------------------------
+Start Frappe bench in development mode:
+
+```
+bench start
 ```
 
-### Contributing
+Clear cache for a specific site after changing templates or assets:
 
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
-
-```bash
-cd apps/bizmastros
-pre-commit install
+```
+bench --site <site-name> clear-cache
 ```
 
-Pre-commit is configured to use the following tools for checking and formatting your code:
+Apply database migrations (if relevant):
 
-- ruff
-- eslint
-- prettier
-- pyupgrade
-### CI
+```
+bench migrate
+```
 
-This app can use GitHub Actions for CI. The following workflows are configured:
+Testing & CI
+------------
+- Follow the project or organization guidelines for CI. This app can be tested
+	inside a standard Frappe bench instance.
 
-- CI: Installs this app and runs unit tests on every push to `develop` branch.
-- Linters: Runs [Frappe Semgrep Rules](https://github.com/frappe/semgrep-rules) and [pip-audit](https://pypi.org/project/pip-audit/) on every pull request.
+Notes & best practices
+----------------------
+- Keep textual content in Service documents; avoid hard-coded copy in
+	templates when possible.
+- Use site-level template overrides for branding changes instead of editing
+	the app templates directly.
 
+Contributing
+------------
+Contributions are welcome. Please follow the repository's general contributing
+guidelines. Add tests for behavior-affecting changes and keep documentation up
+to date.
 
-### License
-
-mit
+If you want this README expanded with examples, screenshots, or developer
+instructions specific to your environment, tell me what to add and I will
+update it.

@@ -1,7 +1,7 @@
-app_name = "bizmastros"
-app_title = "Bizmastros"
+app_name = "webapp"
+app_title = "Webapp"
 app_publisher = "CodEquity"
-app_description = "Company Website for Bizmastro\'s"
+app_description = "Company Website for Webapp"
 app_email = "ashok777hb@gmail.com"
 app_license = "mit"
 
@@ -14,7 +14,7 @@ fixtures = [
 ]
 
 website_generators = ["Service"]
-update_website_context = "bizmastros.overrides.website_context"
+update_website_context = "webapp.overrides.website_context"
 homepage = "home"
 
 
@@ -24,29 +24,29 @@ homepage = "home"
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "bizmastros",
-# 		"logo": "/assets/bizmastros/logo.png",
-# 		"title": "Bizmastros",
-# 		"route": "/bizmastros",
-# 		"has_permission": "bizmastros.api.permission.has_app_permission"
-# 	}
-# ]
+add_to_apps_screen = [
+	{
+		"name": "webapp",
+		"logo": "/assets/webapp/logo.jpg",
+		"title": "Webapp",
+		"route": "/webapp",
+		"has_permission": "webapp.api.permission.has_app_permission"
+	}
+]
 
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/bizmastros/css/bizmastros.css"
-# app_include_js = "/assets/bizmastros/js/bizmastros.js"
+# app_include_css = "/assets/webapp/css/webapp.css"
+# app_include_js = "/assets/webapp/js/webapp.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/bizmastros/css/bizmastros.css"
-# web_include_js = "/assets/bizmastros/js/bizmastros.js"
+# web_include_css = "/assets/webapp/css/webapp.css"
+# web_include_js = "/assets/webapp/js/webapp.js"
 
 # include custom scss in every website theme (without file extension ".scss")
-# website_theme_scss = "bizmastros/public/scss/website"
+# website_theme_scss = "webapp/public/scss/website"
 
 # include js, css files in header of web form
 # webform_include_js = {"doctype": "public/js/doctype.js"}
@@ -64,7 +64,7 @@ homepage = "home"
 # Svg Icons
 # ------------------
 # include app icons in desk
-# app_include_icons = "bizmastros/public/icons.svg"
+# app_include_icons = "webapp/public/icons.svg"
 
 # Home Pages
 # ----------
@@ -91,43 +91,43 @@ homepage = "home"
 
 # add methods and filters to jinja environment
 # jinja = {
-# 	"methods": "bizmastros.utils.jinja_methods",
-# 	"filters": "bizmastros.utils.jinja_filters"
+# 	"methods": "webapp.utils.jinja_methods",
+# 	"filters": "webapp.utils.jinja_filters"
 # }
 
 # Installation
 # ------------
 
-# before_install = "bizmastros.install.before_install"
-# after_install = "bizmastros.install.after_install"
+# before_install = "webapp.install.before_install"
+# after_install = "webapp.install.after_install"
 
 # Uninstallation
 # ------------
 
-# before_uninstall = "bizmastros.uninstall.before_uninstall"
-# after_uninstall = "bizmastros.uninstall.after_uninstall"
+# before_uninstall = "webapp.uninstall.before_uninstall"
+# after_uninstall = "webapp.uninstall.after_uninstall"
 
 # Integration Setup
 # ------------------
 # To set up dependencies/integrations with other apps
 # Name of the app being installed is passed as an argument
 
-# before_app_install = "bizmastros.utils.before_app_install"
-# after_app_install = "bizmastros.utils.after_app_install"
+# before_app_install = "webapp.utils.before_app_install"
+# after_app_install = "webapp.utils.after_app_install"
 
 # Integration Cleanup
 # -------------------
 # To clean up dependencies/integrations with other apps
 # Name of the app being uninstalled is passed as an argument
 
-# before_app_uninstall = "bizmastros.utils.before_app_uninstall"
-# after_app_uninstall = "bizmastros.utils.after_app_uninstall"
+# before_app_uninstall = "webapp.utils.before_app_uninstall"
+# after_app_uninstall = "webapp.utils.after_app_uninstall"
 
 # Desk Notifications
 # ------------------
 # See frappe.core.notifications.get_notification_config
 
-# notification_config = "bizmastros.notifications.get_notification_config"
+# notification_config = "webapp.notifications.get_notification_config"
 
 # Permissions
 # -----------
@@ -158,47 +158,47 @@ homepage = "home"
 
 # scheduler_events = {
 # 	"all": [
-# 		"bizmastros.tasks.all"
+# 		"webapp.tasks.all"
 # 	],
 # 	"daily": [
-# 		"bizmastros.tasks.daily"
+# 		"webapp.tasks.daily"
 # 	],
 # 	"hourly": [
-# 		"bizmastros.tasks.hourly"
+# 		"webapp.tasks.hourly"
 # 	],
 # 	"weekly": [
-# 		"bizmastros.tasks.weekly"
+# 		"webapp.tasks.weekly"
 # 	],
 # 	"monthly": [
-# 		"bizmastros.tasks.monthly"
+# 		"webapp.tasks.monthly"
 # 	],
 # }
 
 # Testing
 # -------
 
-# before_tests = "bizmastros.install.before_tests"
+# before_tests = "webapp.install.before_tests"
 
 # Extend DocType Class
 # ------------------------------
 #
 # Specify custom mixins to extend the standard doctype controller.
 # extend_doctype_class = {
-# 	"Task": "bizmastros.custom.task.CustomTaskMixin"
+# 	"Task": "webapp.custom.task.CustomTaskMixin"
 # }
 
 # Overriding Methods
 # ------------------------------
 #
 # override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "bizmastros.event.get_events"
+# 	"frappe.desk.doctype.event.event.get_events": "webapp.event.get_events"
 # }
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 # override_doctype_dashboards = {
-# 	"Task": "bizmastros.task.get_dashboard_data"
+# 	"Task": "webapp.task.get_dashboard_data"
 # }
 
 # exempt linked doctypes from being automatically cancelled
@@ -212,13 +212,13 @@ homepage = "home"
 
 # Request Events
 # ----------------
-# before_request = ["bizmastros.utils.before_request"]
-# after_request = ["bizmastros.utils.after_request"]
+# before_request = ["webapp.utils.before_request"]
+# after_request = ["webapp.utils.after_request"]
 
 # Job Events
 # ----------
-# before_job = ["bizmastros.utils.before_job"]
-# after_job = ["bizmastros.utils.after_job"]
+# before_job = ["webapp.utils.before_job"]
+# after_job = ["webapp.utils.after_job"]
 
 # User Data Protection
 # --------------------
@@ -248,7 +248,7 @@ homepage = "home"
 # --------------------------------
 
 # auth_hooks = [
-# 	"bizmastros.auth.validate"
+# 	"webapp.auth.validate"
 # ]
 
 # Automatically update python controller files with type annotations for this app.

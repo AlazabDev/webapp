@@ -5,6 +5,8 @@ on:
     branches:
       - version-16
   pull_request:
+    branches:
+      - version-16
 
 concurrency:
   group: develop-webapp-${{ github.event.number }}

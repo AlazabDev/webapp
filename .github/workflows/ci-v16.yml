@@ -3,7 +3,7 @@ name: CI-V16
 on:
   push:
     branches:
-      - develop
+      - version-16
   pull_request:
 
 concurrency:

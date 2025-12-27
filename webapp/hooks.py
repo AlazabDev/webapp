@@ -6,12 +6,7 @@ app_email = "ashok777hb@gmail.com"
 app_license = "mit"
 
 
-fixtures = [
-    {
-        "doctype": "Service",
-        "filters": []
-    }
-]
+fixtures = [{"doctype": "Service", "filters": []}]
 
 website_generators = ["Service"]
 update_website_context = "webapp.overrides.website_context"
@@ -30,7 +25,7 @@ add_to_apps_screen = [
 		"logo": "/assets/webapp/logo.jpg",
 		"title": "Webapp",
 		"route": "/webapp",
-		"has_permission": "webapp.api.permission.has_app_permission"
+		"has_permission": "webapp.api.permission.has_app_permission",
 	}
 ]
 
@@ -262,4 +257,3 @@ add_to_apps_screen = [
 # ------------
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
-

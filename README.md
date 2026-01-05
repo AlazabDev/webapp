@@ -28,12 +28,15 @@ Repository layout
 Customization guide
 -------------------
 1. Content: Create or update a Service document and populate `service_name`,
-	 `short_description`, `service_image`, and `description`. The template will
+	 `short_description`, `service_image`, `route`, `Meta title`, `Meta Description` and `description`. The template will
 	 render those fields automatically.
-2. Layout: Edit templates in `templates/` to change structure, classes or add
-	 sections. For site-specific branding, override templates in a site app.
-3. CTA and flows: Replace the call-to-action block or link it to your site's
-	 contact/lead capture endpoints.
+	 Follow below steps to create new service entry.
+
+	1. Create new doc type called  `Service` with all required values.
+	![alt text](image.png)
+	2. Once services docs are created which will be available on the home page with nice layout.
+	![alt text](image-1.png)
+    
 
 Development & common commands
 -----------------------------

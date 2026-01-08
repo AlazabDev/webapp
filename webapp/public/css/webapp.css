@@ -2,7 +2,7 @@
 .hero-carousel,
 .hero-carousel .carousel-inner,
 .hero-carousel .carousel-item {
-  height: 800px;
+  height: 700px;
 }
 
 /* Force image to respect container */

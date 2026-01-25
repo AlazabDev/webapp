@@ -10,8 +10,11 @@ fixtures = [{"doctype": "Service", "filters": []}]
 
 website_generators = ["Service"]
 update_website_context = "webapp.overrides.website_context"
-homepage = "home"
 
+
+# override_whitelisted_methods = {
+#     "frappe.www.login.login": "webapp.overrides.custom_login"
+# }
 
 # Apps
 # ------------------
@@ -24,8 +27,7 @@ add_to_apps_screen = [
 		"name": "webapp",
 		"logo": "/assets/webapp/logo.jpg",
 		"title": "Webapp",
-		"route": "/webapp",
-		"has_permission": "webapp.api.permission.has_app_permission",
+		"route": "/webapp"
 	}
 ]
 

@@ -1,11 +1,10 @@
-{% extends "webapp/templates/base.html" %}
+{% extends "webapp/templates/webapp_base.html" %}
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
 <section class="container py-5">
   <h2 class="text-center fw-bold mb-4" id="Services">Our Services</h2>
-
   <div class="row">
     {% for service in services %}
     <div class="col-md-4 mb-4">

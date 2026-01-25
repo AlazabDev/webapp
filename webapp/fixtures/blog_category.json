@@ -1,0 +1,38 @@
+[
+  {
+    "doctype": "Blog Category",
+    "name": "technology",
+    "published": 1,
+    "title": "Technology",
+    "route": "technology",
+    "preview_image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    "description": "Latest updates, trends, and deep dives into modern technology, software engineering, and innovation."
+  },
+  {
+    "doctype": "Blog Category",
+    "name": "business",
+    "published": 1,
+    "title": "Business",
+    "route": "business",
+    "preview_image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf",
+    "description": "Insights on business strategy, digital transformation, operations, and enterprise growth."
+  },
+  {
+    "doctype": "Blog Category",
+    "name": "devops",
+    "published": 1,
+    "title": "Devops",
+    "route": "devops",
+    "preview_image": "https://images.unsplash.com/photo-1556075798-4825dfaaf498",
+    "description": "Automation, CI/CD pipelines, infrastructure as code, monitoring, and DevOps best practices."
+  },
+  {
+    "doctype": "Blog Category",
+    "name": "cloud",    
+    "published": 1,
+    "title": "Cloud",
+    "route": "cloud",
+    "preview_image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
+    "description": "Cloud computing concepts, architectures, security, and real-world deployment patterns."
+  }
+]

@@ -1,0 +1,20 @@
+{
+ "app": "webapp",
+ "creation": "2026-01-25 15:12:12.135096",
+ "docstatus": 0,
+ "doctype": "Desktop Icon",
+ "hidden": 0,
+ "icon_type": "App",
+ "idx": 0,
+ "label": "Webapp",
+ "link": "/webapp",
+ "link_type": "External",
+ "logo_url": "/assets/webapp/logo.jpg",
+ "modified": "2026-01-25 15:12:12.135096",
+ "modified_by": "Administrator",
+ "name": "Webapp",
+ "owner": "Administrator",
+ "restrict_removal": 0,
+ "roles": [],
+ "standard": 1
+}

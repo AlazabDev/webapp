@@ -6,7 +6,12 @@ app_email = "ashok777hb@gmail.com"
 app_license = "mit"
 
 
-fixtures = [{"doctype": "Service", "filters": []}]
+fixtures = [
+    {"doctype": "Service", "filters": []},
+    {"doctype": "Blog Category", "filters": []},
+    {"doctype": "Blogger", "filters": []},
+    {"doctype": "Blog Post", "filters": []},
+    ]
 
 website_generators = ["Service"]
 update_website_context = "webapp.overrides.website_context"

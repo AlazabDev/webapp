@@ -1,0 +1,68 @@
+{% extends "webapp/templates/webapp_base.html" %}
+
+{% block title %}شركة العزب | المقاولات والتشطيبات والصيانة{% endblock %}
+
+{% block content %}
+  {% include "webapp/templates/includes/slide_show.html" %}
+
+  <section class="section-space" id="services">
+    <div class="container">
+      <div class="section-heading text-center">
+        <span class="eyebrow text-brand">خدمات العزب</span>
+        <h2>مسارات تشغيل متخصصة تحت إدارة واحدة</h2>
+        <p>كل خدمة مرتبطة بدورة تنفيذ واضحة من الطلب وحتى التسليم والمتابعة.</p>
+      </div>
+
+      <div class="row g-4">
+        {% for service in services %}
+        <div class="col-md-6 col-xl-3">
+          <article class="service-card h-100">
+            {% if service.service_image %}
+            <img src="{{ service.service_image }}" alt="{{ service.service_name }}" loading="lazy">
+            {% endif %}
+            <div class="service-card-body">
+              <div class="service-icon"><i class="bi {{ service.icon or 'bi-gear' }}"></i></div>
+              <h3>{{ service.service_name }}</h3>
+              <p>{{ service.short_description }}</p>
+              <a href="/{{ service.route }}" class="stretched-link">تفاصيل الخدمة <i class="bi bi-arrow-left"></i></a>
+            </div>
+          </article>
+        </div>
+        {% else %}
+        <div class="col-12"><div class="empty-state">لم تتم إضافة خدمات منشورة بعد.</div></div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space bg-soft">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-5">
+          <span class="eyebrow text-brand">دورة المشروع</span>
+          <h2 class="display-6 fw-bold">نقطة بداية واضحة ونقطة تسليم موثقة</h2>
+          <p class="text-secondary">نجمع المعاينة والتسعير والتنفيذ والمتابعة والصيانة في مسار تشغيلي واحد يمنع ضياع المعلومات بين الفرق.</p>
+          <a class="btn btn-outline-brand" href="/projects">تعرف على دورة المشروعات</a>
+        </div>
+        <div class="col-lg-7">
+          <div class="process-grid">
+            <div><strong>01</strong><span>استلام الاحتياج</span></div>
+            <div><strong>02</strong><span>المعاينة والتحديد</span></div>
+            <div><strong>03</strong><span>التسعير والاعتماد</span></div>
+            <div><strong>04</strong><span>التنفيذ والمتابعة</span></div>
+            <div><strong>05</strong><span>الاستلام والتوثيق</span></div>
+            <div><strong>06</strong><span>الصيانة المستمرة</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container text-center">
+      <h2>لديك مشروع أو طلب صيانة؟</h2>
+      <p>أرسل البيانات الأساسية وسيتحول طلبك إلى مسار متابعة واضح.</p>
+      <a class="btn btn-brand btn-lg" href="/request-quote">إرسال طلب جديد</a>
+    </div>
+  </section>
+{% endblock %}

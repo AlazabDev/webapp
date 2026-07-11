@@ -1,97 +1,134 @@
 {
-  "doctype": "DocType",
-  "name": "Service",
-  "module": "webapp",
-  "custom": 0,
-  "is_submittable": 0,
-  "is_tree": 0,
-  "editable_grid": 0,
-  "track_changes": 1,
-  "allow_rename": 0,
-  "allow_import": 1,
+  "actions": [],
   "allow_guest_to_view": 1,
-  "show_name_in_global_search": 1,
-  "show_title_field_in_link": 1,
-  "title_field": "service_name",
-  "has_web_view": 1,
-  "route": "services",
+  "allow_import": 1,
+  "allow_rename": 0,
+  "creation": "2026-07-11 00:00:00.000000",
+  "custom": 0,
+  "doctype": "DocType",
+  "document_type": "Document",
+  "editable_grid": 0,
+  "engine": "InnoDB",
+  "field_order": [
+    "service_name",
+    "short_description",
+    "description",
+    "icon",
+    "service_image",
+    "published",
+    "route",
+    "meta_title",
+    "meta_description"
+  ],
   "fields": [
     {
       "fieldname": "service_name",
-      "label": "Service Name",
       "fieldtype": "Data",
-      "reqd": 1,
-      "in_list_view": 1
+      "in_global_search": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Service Name",
+      "reqd": 1
     },
     {
       "fieldname": "short_description",
-      "label": "Short Description",
       "fieldtype": "Small Text",
-      "in_list_view": 1
+      "in_global_search": 1,
+      "in_list_view": 1,
+      "label": "Short Description"
     },
     {
       "fieldname": "description",
-      "label": "Description",
-      "fieldtype": "Text Editor"
+      "fieldtype": "Text Editor",
+      "ignore_xss_filter": 1,
+      "label": "Description"
     },
     {
+      "description": "Bootstrap Icons class without the bi prefix, for example bi-tools.",
       "fieldname": "icon",
-      "label": "Icon (Bootstrap / FontAwesome)",
-      "fieldtype": "Data"
+      "fieldtype": "Data",
+      "label": "Bootstrap Icon"
     },
     {
       "fieldname": "service_image",
-      "label": "Service Image",
-      "fieldtype": "Attach Image"
+      "fieldtype": "Attach Image",
+      "label": "Service Image"
     },
     {
-      "fieldname": "published",
-      "label": "Published",
-      "fieldtype": "Check",
       "default": "1",
-      "in_list_view": 1
+      "fieldname": "published",
+      "fieldtype": "Check",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Published"
     },
     {
+      "description": "Public route without a leading or trailing slash.",
       "fieldname": "route",
-      "label": "Route",
       "fieldtype": "Data",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Route",
+      "reqd": 1,
       "unique": 1
     },
     {
       "fieldname": "meta_title",
-      "label": "Meta Title",
-      "fieldtype": "Data"
+      "fieldtype": "Data",
+      "label": "Meta Title"
     },
     {
       "fieldname": "meta_description",
-      "label": "Meta Description",
-      "fieldtype": "Small Text"
+      "fieldtype": "Small Text",
+      "label": "Meta Description"
     }
   ],
+  "has_web_view": 1,
+  "index_web_pages_for_search": 1,
+  "is_published_field": "published",
+  "is_submittable": 0,
+  "is_tree": 0,
+  "links": [],
+  "make_attachments_public": 1,
+  "modified": "2026-07-12 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "webapp",
+  "name": "Service",
+  "owner": "Administrator",
   "permissions": [
     {
-      "role": "System Manager",
-      "read": 1,
-      "write": 1,
       "create": 1,
-      "delete": 1
-    },
-    {
-      "role": "Website Manager",
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "import": 1,
+      "print": 1,
       "read": 1,
-      "write": 1,
-      "create": 1
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
     },
     {
-      "role": "Guest",
-      "read": 1
-    },
-    {
-      "role": "Website User",
-      "read": 1
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "import": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Website Manager",
+      "share": 1,
+      "write": 1
     }
   ],
+  "search_fields": "service_name,short_description,route",
+  "show_name_in_global_search": 1,
+  "show_title_field_in_link": 1,
   "sort_field": "creation",
   "sort_order": "DESC",
-  "index_web_pages_for_search": 1
+  "states": [],
+  "title_field": "service_name",
+  "track_changes": 1
 }

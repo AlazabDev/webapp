@@ -1,428 +1,47 @@
-<!-- ========================================================== -->
-<!-- صفحة تفاصيل الخدمة - شركة العزب                          -->
-<!-- الهوية: #030957 (كحلي داكن)، #FFB900 (أصفر ذهبي)        -->
-<!-- الخلفية: عاجية هادئة                                     -->
-<!-- ========================================================== -->
+{% extends "webapp/templates/webapp_base.html" %}
 
-{% extends "webapp/templates/base.html" %}
+{% block title %}{{ doc.meta_title or doc.service_name }} | شركة العزب{% endblock %}
 
-{% block title %}
-{{ doc.service_name }} - شركة العزب للمقاولات العامة
+{% block meta %}
+{% if doc.meta_description %}<meta name="description" content="{{ doc.meta_description }}">{% endif %}
 {% endblock %}
 
 {% block content %}
-
-<!-- ========================================================== -->
-<!-- القسم 1: الهيرو (Hero Section)                             -->
-<!-- ========================================================== -->
-<section class="service-hero py-5" 
-         style="background: linear-gradient(135deg, #030957 0%, #0a1a6e 50%, #030957 100%);
-                color: #ffffff;
-                position: relative;
-                overflow: hidden;
-                min-height: 400px;
-                display: flex;
-                align-items: center;">
-
-    <!-- خلفية مزخرفة -->
-    <div style="position: absolute; top: -30%; right: -5%; width: 60%; height: 150%; 
-                background: radial-gradient(circle, rgba(255, 185, 0, 0.05) 0%, transparent 70%);
-                transform: rotate(-15deg);">
+<section class="page-hero service-hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-8">
+        <span class="eyebrow">خدمات العزب</span>
+        <h1>{{ doc.service_name }}</h1>
+        {% if doc.short_description %}<p>{{ doc.short_description }}</p>{% endif %}
+        <a class="btn btn-brand btn-lg" href="/request-quote?service={{ doc.name }}">اطلب عرض سعر</a>
+      </div>
+      {% if doc.service_image %}
+      <div class="col-lg-4">
+        <img class="service-hero-image" src="{{ doc.service_image }}" alt="{{ doc.service_name }}">
+      </div>
+      {% endif %}
     </div>
-
-    {% if doc.service_image %}
-    <!-- صورة الخلفية (مع شفافية) -->
-    <img src="{{ doc.service_image }}" 
-         alt="{{ doc.service_name }}"
-         style="position: absolute; 
-                top: 0; 
-                right: 0; 
-                width: 50%; 
-                height: 100%; 
-                object-fit: cover; 
-                opacity: 0.08;
-                pointer-events: none;">
-    {% endif %}
-
-    <div class="container position-relative" style="z-index: 10;">
-        <div class="row align-items-center">
-            <div class="col-lg-8">
-                <!-- شارة الخدمة -->
-                <div class="mb-3" 
-                     style="display: inline-block; 
-                            background: rgba(255, 185, 0, 0.12);
-                            border: 1px solid rgba(255, 185, 0, 0.25);
-                            padding: 0.3rem 1.2rem;
-                            border-radius: 30px;
-                            font-size: 0.75rem;
-                            color: #FFB900;
-                            letter-spacing: 2px;
-                            text-transform: uppercase;">
-                    <i class="bi bi-tag-fill me-1"></i> خدمتنا
-                </div>
-
-                <!-- عنوان الخدمة -->
-                <h1 class="display-4 fw-bold mb-3" 
-                    style="font-family: 'Cairo', sans-serif; line-height: 1.2;">
-                    {{ doc.service_name }}
-                </h1>
-
-                <!-- وصف مختصر -->
-                <p class="lead text-white-50 mb-4" 
-                   style="font-size: 1.15rem; max-width: 600px;">
-                    {{ doc.short_description }}
-                </p>
-
-                <!-- إحصائيات سريعة (إذا كانت موجودة) -->
-                <div class="d-flex flex-wrap gap-4 mt-4">
-                    {% if doc.projects_count %}
-                    <div>
-                        <span class="d-block display-6 fw-bold" style="color: #FFB900; font-size: 1.8rem;">
-                            {{ doc.projects_count }}+
-                        </span>
-                        <span class="text-white-50" style="font-size: 0.85rem;">مشروع منجز</span>
-                    </div>
-                    {% endif %}
-                    
-                    {% if doc.experience_years %}
-                    <div>
-                        <span class="d-block display-6 fw-bold text-white" style="font-size: 1.8rem;">
-                            {{ doc.experience_years }}
-                        </span>
-                        <span class="text-white-50" style="font-size: 0.85rem;">سنة خبرة</span>
-                    </div>
-                    {% endif %}
-                </div>
-
-                <!-- أزرار التفاعل -->
-                <div class="d-flex flex-wrap gap-3 mt-4">
-                    <a href="/request-quote" 
-                       class="btn btn-lg px-5 py-3"
-                       style="background: #FFB900;
-                              color: #030957;
-                              font-weight: 700;
-                              border: none;
-                              border-radius: 50px;
-                              transition: all 0.3s ease;
-                              box-shadow: 0 8px 30px rgba(255, 185, 0, 0.4);">
-                        <i class="bi bi-file-earmark-text me-2"></i> اطلب عرض سعر
-                    </a>
-                    <a href="#service-details" 
-                       class="btn btn-lg px-5 py-3"
-                       style="background: transparent;
-                              color: #fff;
-                              font-weight: 600;
-                              border: 2px solid rgba(255,255,255,0.25);
-                              border-radius: 50px;
-                              transition: all 0.3s ease;">
-                        <i class="bi bi-chevron-double-down me-2"></i> تفاصيل الخدمة
-                    </a>
-                </div>
-            </div>
-
-            <!-- صورة الخدمة (جانبية) -->
-            {% if doc.service_image %}
-            <div class="col-lg-4 text-center d-none d-lg-block">
-                <img src="{{ doc.service_image }}" 
-                     alt="{{ doc.service_name }}"
-                     style="max-height: 280px; 
-                            width: auto; 
-                            border-radius: 16px;
-                            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-                            border: 2px solid rgba(255, 185, 0, 0.15);">
-            </div>
-            {% endif %}
-        </div>
-    </div>
+  </div>
 </section>
 
-<!-- ========================================================== -->
-<!-- القسم 2: تفاصيل الخدمة (الوصف الكامل)                    -->
-<!-- ========================================================== -->
-<section id="service-details" class="py-5" style="background: #f5f0e8;">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <!-- بطاقة المحتوى -->
-                <div class="card border-0 shadow-sm p-4 p-lg-5" 
-                     style="background: #ffffff;
-                            border-radius: 20px;
-                            border: 1px solid rgba(3, 9, 87, 0.06);">
-                    
-                    <!-- شريط علوي -->
-                    <div style="width: 80px; height: 4px; background: #FFB900; border-radius: 4px; margin-bottom: 2rem;"></div>
-
-                    <!-- محتوى الخدمة -->
-                    <div class="service-content" 
-                         style="font-size: 1.05rem; 
-                                line-height: 1.9; 
-                                color: #2d2d2d;
-                                font-family: 'Tajawal', sans-serif;">
-                        {{ doc.description | safe }}
-                    </div>
-
-                    <!-- فواصل مزخرفة -->
-                    <hr style="border-color: rgba(3, 9, 87, 0.06); margin: 2.5rem 0;">
-
-                    <!-- مميزات الخدمة (إذا كانت موجودة) -->
-                    {% if doc.features %}
-                    <div class="row g-4 mt-2">
-                        <div class="col-12">
-                            <h5 class="fw-bold mb-4" style="color: #030957;">
-                                <i class="bi bi-check-circle-fill me-2" style="color: #FFB900;"></i>
-                                مميزات الخدمة
-                            </h5>
-                        </div>
-                        {% for feature in doc.features %}
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-start">
-                                <i class="bi bi-check-lg mt-1 me-2" style="color: #FFB900; font-size: 1.3rem;"></i>
-                                <span style="font-size: 0.95rem; color: #4a4a4a;">{{ feature }}</span>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
+<section class="section-space">
+  <div class="container">
+    <div class="content-card rich-content">
+      {% if doc.description %}
+        {{ doc.description | safe }}
+      {% else %}
+        <p>سيتم إضافة تفاصيل هذه الخدمة قريبًا.</p>
+      {% endif %}
     </div>
+  </div>
 </section>
 
-<!-- ========================================================== -->
-<!-- القسم 3: المشاريع المرتبطة (Related Projects)              -->
-<!-- ========================================================== -->
-{% if related_projects %}
-<section class="py-5" style="background: #f5f0e8;">
-    <div class="container">
-        <div class="text-center mb-5">
-            <span style="color: #FFB900; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;">
-                <i class="bi bi-images-fill me-1"></i> أعمالنا
-            </span>
-            <h2 class="fw-bold" style="color: #030957; font-family: 'Cairo', sans-serif;">
-                مشاريع <span style="color: #FFB900;">منفذة</span>
-            </h2>
-            <div style="width: 60px; height: 3px; background: #FFB900; margin: 0.8rem auto;"></div>
-            <p class="text-muted" style="font-size: 1.05rem;">
-                نماذج من مشاريعنا في نفس مجال الخدمة
-            </p>
-        </div>
-
-        <div class="row g-4">
-            {% for project in related_projects %}
-            <div class="col-md-4 col-sm-6">
-                <div class="card border-0 shadow-sm h-100" 
-                     style="border-radius: 16px; 
-                            overflow: hidden;
-                            transition: all 0.4s ease;
-                            border: 1px solid rgba(3, 9, 87, 0.05);">
-                    
-                    {% if project.image %}
-                    <img src="{{ project.image }}" 
-                         alt="{{ project.name }}"
-                         style="height: 220px; 
-                                width: 100%; 
-                                object-fit: cover; 
-                                transition: all 0.4s ease;">
-                    {% else %}
-                    <div style="height: 220px; 
-                                background: linear-gradient(135deg, #030957, #0a1a6e);
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                color: rgba(255,255,255,0.3);">
-                        <i class="bi bi-building-fill" style="font-size: 4rem;"></i>
-                    </div>
-                    {% endif %}
-
-                    <div class="card-body" style="padding: 1.5rem;">
-                        <h6 class="fw-bold mb-1" style="color: #030957;">{{ project.name }}</h6>
-                        {% if project.location %}
-                        <p class="text-muted small mb-2">
-                            <i class="bi bi-geo-alt-fill me-1" style="color: #FFB900;"></i>
-                            {{ project.location }}
-                        </p>
-                        {% endif %}
-                        <a href="/projects/{{ project.route }}" 
-                           class="btn btn-sm mt-2 px-3"
-                           style="background: #030957; 
-                                  color: #fff;
-                                  border-radius: 25px;
-                                  transition: all 0.3s ease;">
-                            <i class="bi bi-arrow-left-circle me-1"></i> عرض المشروع
-                        </a>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-
-        <!-- زر عرض كل المشاريع -->
-        <div class="text-center mt-5">
-            <a href="/projects" 
-               class="btn px-5 py-2"
-               style="background: transparent;
-                      color: #030957;
-                      font-weight: 600;
-                      border: 2px solid #030957;
-                      border-radius: 50px;
-                      transition: all 0.3s ease;">
-                <i class="bi bi-grid-3x3-gap-fill me-2"></i>
-                عرض جميع المشاريع
-            </a>
-        </div>
-    </div>
+<section class="cta-section">
+  <div class="container text-center">
+    <h2>ابدأ طلب {{ doc.service_name }}</h2>
+    <p>أرسل الاحتياج والموقع والموعد المتوقع لنبدأ التقييم.</p>
+    <a class="btn btn-brand btn-lg" href="/request-quote?service={{ doc.name }}">إرسال الطلب</a>
+  </div>
 </section>
-{% endif %}
-
-<!-- ========================================================== -->
-<!-- القسم 4: دعوة للتفاعل (Call to Action)                    -->
-<!-- ========================================================== -->
-<section class="py-5" 
-         style="background: linear-gradient(135deg, #030957 0%, #0a1a6e 100%);
-                color: #ffffff;
-                position: relative;
-                overflow: hidden;">
-
-    <!-- زخرفة خلفية -->
-    <div style="position: absolute; bottom: -20%; right: -5%; width: 40%; height: 150%; 
-                background: radial-gradient(circle, rgba(255, 185, 0, 0.06) 0%, transparent 70%);
-                transform: rotate(15deg);">
-    </div>
-
-    <div class="container position-relative" style="z-index: 10;">
-        <div class="row justify-content-center text-center">
-            <div class="col-lg-8">
-                <span style="color: #FFB900; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;">
-                    <i class="bi bi-telephone-fill me-1"></i> احصل على عرض سعر
-                </span>
-                <h2 class="display-5 fw-bold mt-2 mb-3" style="font-family: 'Cairo', sans-serif;">
-                    هل لديك مشروع <span style="color: #FFB900;">في ذهنك</span>؟
-                </h2>
-                <p class="text-white-50 mb-4" style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
-                    تواصل مع فريقنا المتخصص اليوم واحصل على استشارة مجانية وعرض سعر دقيق لمشروعك القادم.
-                </p>
-                <div class="d-flex flex-wrap gap-3 justify-content-center mt-3">
-                    <a href="/request-quote" 
-                       class="btn btn-lg px-5 py-3"
-                       style="background: #FFB900;
-                              color: #030957;
-                              font-weight: 700;
-                              border: none;
-                              border-radius: 50px;
-                              transition: all 0.3s ease;
-                              box-shadow: 0 8px 30px rgba(255, 185, 0, 0.4);">
-                        <i class="bi bi-file-earmark-text me-2"></i> اطلب عرض سعر الآن
-                    </a>
-                    <a href="/contact" 
-                       class="btn btn-lg px-5 py-3"
-                       style="background: transparent;
-                              color: #fff;
-                              font-weight: 600;
-                              border: 2px solid rgba(255,255,255,0.25);
-                              border-radius: 50px;
-                              transition: all 0.3s ease;">
-                        <i class="bi bi-envelope-fill me-2"></i> تواصل معنا
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ========================================================== -->
-<!-- CSS مخصص للصفحة                                           -->
-<!-- ========================================================== -->
-<style>
-    /* تحسين المظهر العام */
-    .service-content img {
-        max-width: 100%;
-        border-radius: 12px;
-        margin: 1.5rem 0;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    }
-
-    .service-content h2 {
-        color: #030957;
-        font-weight: 700;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .service-content h3 {
-        color: #030957;
-        font-weight: 600;
-        margin-top: 1.5rem;
-        margin-bottom: 0.8rem;
-    }
-
-    .service-content ul {
-        list-style: none;
-        padding-left: 0;
-    }
-
-    .service-content ul li {
-        padding: 0.4rem 0;
-        padding-left: 1.8rem;
-        position: relative;
-    }
-
-    .service-content ul li::before {
-        content: '✦';
-        position: absolute;
-        left: 0;
-        color: #FFB900;
-        font-weight: bold;
-    }
-
-    .service-content blockquote {
-        background: rgba(3, 9, 87, 0.04);
-        border-right: 4px solid #FFB900;
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
-        margin: 1.5rem 0;
-        color: #4a4a4a;
-    }
-
-    /* تأثيرات البطاقات */
-    .card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 12px 40px rgba(3, 9, 87, 0.12) !important;
-    }
-
-    .card:hover img {
-        transform: scale(1.03);
-    }
-
-    .btn:hover {
-        transform: translateY(-3px) scale(1.02);
-    }
-
-    /* تحسين المظهر على الجوال */
-    @media (max-width: 768px) {
-        .service-hero {
-            min-height: auto !important;
-            padding: 3rem 0 !important;
-        }
-
-        .service-hero h1 {
-            font-size: 2rem !important;
-        }
-
-        .service-hero .btn {
-            width: 100%;
-            text-align: center;
-            padding: 0.8rem !important;
-            font-size: 0.9rem !important;
-        }
-
-        .service-content {
-            font-size: 0.95rem !important;
-        }
-
-        .card-body {
-            padding: 1rem !important;
-        }
-    }
-</style>
 {% endblock %}

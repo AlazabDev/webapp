@@ -1,0 +1,2029 @@
+{
+  "summary": {
+    "total_files_scanned": 79,
+    "file_types": {
+      "css": 26,
+      "js": 18,
+      "html": 35
+    },
+    "total_paths_found": 965,
+    "path_types": {
+      "css_url": 25,
+      "js_import": 4,
+      "link_href": 575,
+      "link_css": 132,
+      "script_src": 145,
+      "include": 3,
+      "static_url": 5,
+      "img_src": 73,
+      "extends": 3
+    },
+    "missing_files_count": 10,
+    "absolute_paths_count": 47,
+    "relative_paths_count": 3
+  },
+  "all_paths": [
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/css/bizmastros.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/css/brand.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/css/main.css",
+      "type": "css",
+      "paths": {
+        "css_url": [
+          "../fonts/Jozoor.otf"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/js/i18n.js",
+      "type": "js",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/js/includes.js",
+      "type": "js",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/js/main.js",
+      "type": "js",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/js/quote.js",
+      "type": "js",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/aos/aos.cjs.js",
+      "type": "js",
+      "paths": {
+        "js_import": [
+          "lodash.throttle",
+          "lodash.debounce"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/aos/aos.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/aos/aos.esm.js",
+      "type": "js",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/aos/aos.js",
+      "type": "js",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/css/bootstrap-grid.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/css/bootstrap-grid.min.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/css/bootstrap-grid.rtl.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/css/bootstrap-grid.rtl.min.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/css/bootstrap-reboot.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/css/bootstrap-reboot.min.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/css/bootstrap-reboot.rtl.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/css/bootstrap-reboot.rtl.min.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/css/bootstrap-utilities.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/css/bootstrap-utilities.min.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/css/bootstrap-utilities.rtl.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/css/bootstrap-utilities.rtl.min.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/css/bootstrap.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/css/bootstrap.min.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/css/bootstrap.rtl.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/css/bootstrap.rtl.min.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/js/bootstrap.bundle.js",
+      "type": "js",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/js/bootstrap.bundle.min.js",
+      "type": "js",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/js/bootstrap.esm.js",
+      "type": "js",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/js/bootstrap.esm.min.js",
+      "type": "js",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/js/bootstrap.js",
+      "type": "js",
+      "paths": {
+        "js_import": [
+          "@popperjs/core"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap/js/bootstrap.min.js",
+      "type": "js",
+      "paths": {
+        "js_import": [
+          "@popperjs/core"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap-icons/bootstrap-icons.css",
+      "type": "css",
+      "paths": {
+        "css_url": [
+          "./fonts/bootstrap-icons.woff?e34853135f9e39acf64315236852cd5a",
+          "./fonts/bootstrap-icons.woff2?e34853135f9e39acf64315236852cd5a"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap-icons/bootstrap-icons.min.css",
+      "type": "css",
+      "paths": {
+        "css_url": [
+          "fonts/bootstrap-icons.woff?e34853135f9e39acf64315236852cd5a",
+          "fonts/bootstrap-icons.woff2?e34853135f9e39acf64315236852cd5a"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap-icons/bootstrap-icons.scss",
+      "type": "css",
+      "paths": {
+        "css_url": [
+          "#{$bootstrap-icons-font-file}.woff2?#{$bootstrap-icons-font-hash}",
+          "#{$bootstrap-icons-font-file}.woff?#{$bootstrap-icons-font-hash}"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/glightbox/css/glightbox.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/glightbox/css/glightbox.min.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/glightbox/js/glightbox.js",
+      "type": "js",
+      "paths": {
+        "link_href": [
+          "#"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/glightbox/js/glightbox.min.js",
+      "type": "js",
+      "paths": {
+        "link_href": [
+          "#"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/php-email-form/validate.js",
+      "type": "js",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/purecounter/purecounter_vanilla.js",
+      "type": "js",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/swiper/swiper-bundle.min.css",
+      "type": "css",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/swiper/swiper-bundle.min.js",
+      "type": "js",
+      "paths": {
+        "css_url": [
+          "e",
+          "t.params.url"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/base.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css",
+          "/assets/webapp/css/webapp.css",
+          "https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+        ],
+        "script_src": [
+          "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        ],
+        "include": [
+          "webapp/templates/includes/slide_show.html",
+          "webapp/templates/includes/header.html",
+          "webapp/templates/includes/footer.html"
+        ],
+        "static_url": [
+          "/assets/webapp/css/webapp.css"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/components/footer.html",
+      "type": "html",
+      "paths": {
+        "img_src": [
+          "https://al-azab.co/w.png"
+        ],
+        "link_href": [
+          "index.html",
+          "https://www.instagram.com/alazab.co/",
+          "legal.html",
+          "luxury-finishing.html",
+          "team.html",
+          "general-supplies.html",
+          "privacy.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "brand-identity.html",
+          "terms.html",
+          "contact.html",
+          "maintenance.html",
+          "https://alazab.dev/",
+          "https://www.youtube.com/@al-azab_co",
+          "https://wa.me/c/201004006620",
+          "clients.html",
+          "about.html"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/components/header.html",
+      "type": "html",
+      "paths": {
+        "img_src": [
+          "https://al-azab.co/w.png"
+        ],
+        "link_href": [
+          "index.html",
+          "general-supplies.html",
+          "clients.html",
+          "luxury-finishing.html",
+          "legal.html",
+          "quote.html",
+          "brand-identity.html",
+          "contact.html",
+          "services.html",
+          "projects.html",
+          "maintenance.html",
+          "about.html"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/generators/service.html",
+      "type": "html",
+      "paths": {
+        "img_src": [
+          "{{ doc.service_image }}",
+          "{{ project.image }}"
+        ],
+        "link_href": [
+          "/projects/{{ project.route }}",
+          "/request-quote",
+          "/contact",
+          "#service-details",
+          "/projects"
+        ],
+        "extends": [
+          "webapp/templates/base.html"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/footer.html",
+      "type": "html",
+      "paths": {
+        "link_href": [
+          "/about",
+          "tel:+201234567890",
+          "/#services",
+          "#",
+          "/blog",
+          "/request-quote",
+          "/contact",
+          "/projects",
+          "mailto:info@alazab.com",
+          "/{{ line.route }}"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/header.html",
+      "type": "html",
+      "paths": {
+        "img_src": [
+          "/assets/alazab/images/logo.png"
+        ],
+        "link_href": [
+          "/about",
+          "/services",
+          "/",
+          "#",
+          "/blog",
+          "/request-quote",
+          "/contact",
+          "/projects",
+          "/{{ line.route }}"
+        ],
+        "static_url": [
+          "/assets/alazab/images/logo.png"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/hero-carousel.html",
+      "type": "html",
+      "paths": {
+        "img_src": [
+          "/assets/alazab/images/projects/luxury-finishing-bg.webp"
+        ],
+        "link_href": [
+          "/services/laban-alasfour",
+          "/services/finishing",
+          "/request-quote",
+          "/services/uberfix",
+          "/services/brand-identity"
+        ],
+        "static_url": [
+          "/assets/alazab/images/projects/luxury-finishing-bg.webp"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/slide_show.html",
+      "type": "html",
+      "paths": {
+        "img_src": [
+          "/assets/alazab/images/projects/luxury-finishing-bg.webp"
+        ],
+        "link_href": [
+          "/services/laban-alasfour",
+          "/services/finishing",
+          "/request-quote",
+          "/services/uberfix",
+          "/services/brand-identity"
+        ],
+        "static_url": [
+          "/assets/alazab/images/projects/luxury-finishing-bg.webp"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/404.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/vendor/php-email-form/validate.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "https://al-azab.co/w.png"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "help-center.html",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "search.html",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "services.html",
+          "general-supplies.html",
+          "#",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "projects.html",
+          "brand-identity.html",
+          "blog.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html"
+        ],
+        "css_url": [
+          "assets/img/construction/showcase-2.webp"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/about.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/vendor/php-email-form/validate.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "https://al-azab.co/w.png",
+          "assets/img/construction/project-4.webp"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "services.html",
+          "general-supplies.html",
+          "#",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "brand-identity.html",
+          "projects.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html"
+        ],
+        "css_url": [
+          "assets/img/construction/showcase-2.webp"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/brand-identity.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css",
+          "assets/css/brand.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/js/i18n.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "https://al-azab.co/w.png"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "/projects.html",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "services.html",
+          "general-supplies.html",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "brand-identity.html",
+          "projects.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html",
+          "/quote.html"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/clients.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "https://al-azab.co/w.png"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "services.html",
+          "general-supplies.html",
+          "#",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "brand-identity.html",
+          "projects.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html"
+        ],
+        "css_url": [
+          "assets/img/construction/showcase-2.webp"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/contact.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/vendor/php-email-form/validate.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "https://al-azab.co/w.png"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "services.html",
+          "general-supplies.html",
+          "#",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "brand-identity.html",
+          "projects.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html"
+        ],
+        "css_url": [
+          "assets/img/construction/showcase-2.webp"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/customer-support.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/js/i18n.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "https://al-azab.co/w.png",
+          "https://al-azab.co/b.png"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "tel:+966123456789",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "tel:+966123456792",
+          "services.html",
+          "general-supplies.html",
+          "#",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "tel:+966123456791",
+          "brand-identity.html",
+          "tel:+966123456790",
+          "projects.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/footer.html",
+      "type": "html",
+      "paths": {
+        "img_src": [
+          "https://al-azab.co/w.png"
+        ],
+        "link_href": [
+          "index.html",
+          "https://www.instagram.com/alazab.co/",
+          "legal.html",
+          "luxury-finishing.html",
+          "team.html",
+          "general-supplies.html",
+          "privacy.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "brand-identity.html",
+          "terms.html",
+          "contact.html",
+          "maintenance.html",
+          "https://alazab.dev/",
+          "https://www.youtube.com/@al-azab_co",
+          "https://wa.me/c/201004006620",
+          "clients.html",
+          "about.html"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/founder.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/js/i18n.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "https://al-azab.co/w.png"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "services.html",
+          "general-supplies.html",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "brand-identity.html",
+          "projects.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html"
+        ],
+        "css_url": [
+          "assets/img/construction/showcase-1.webp"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/header.html",
+      "type": "html",
+      "paths": {
+        "img_src": [
+          "https://al-azab.co/w.png"
+        ],
+        "link_href": [
+          "index.html",
+          "general-supplies.html",
+          "clients.html",
+          "luxury-finishing.html",
+          "legal.html",
+          "quote.html",
+          "brand-identity.html",
+          "contact.html",
+          "services.html",
+          "projects.html",
+          "maintenance.html",
+          "about.html"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/index.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/vendor/php-email-form/validate.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "assets/img/person/person-m-7.webp",
+          "assets/img/construction/project-3.webp",
+          "assets/img/construction/project-1.webp",
+          "assets/img/person/person-m-8.webp",
+          "assets/img/person/person-m-13.webp",
+          "assets/img/construction/project-9.webp",
+          "assets/img/construction/team-7.webp",
+          "assets/img/construction/team-9.webp",
+          "https://al-azab.co/w.png",
+          "assets/img/construction/team-2.webp",
+          "assets/img/construction/project-4.webp",
+          "assets/img/construction/project-5.webp",
+          "assets/img/construction/badge-2.webp",
+          "assets/img/construction/team-3.webp",
+          "assets/img/construction/team-5.webp",
+          "assets/img/person/person-f-9.webp",
+          "assets/img/construction/project-11.webp",
+          "assets/img/construction/badge-4.webp",
+          "assets/img/construction/badge-3.webp",
+          "assets/img/construction/badge-1.webp",
+          "assets/img/construction/team-1.webp",
+          "assets/img/person/person-f-7.webp",
+          "assets/img/construction/project-7.webp",
+          "assets/img/person/person-f-8.webp"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "#portfolio",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "#services",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "project-details.html",
+          "services.html",
+          "general-supplies.html",
+          "#",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "brand-identity.html",
+          "service-details.html",
+          "projects.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/laban-alasfour.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css",
+          "assets/css/brand.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/js/i18n.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "https://al-azab.co/w.png"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "services.html",
+          "general-supplies.html",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "/contact.html",
+          "brand-identity.html",
+          "projects.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html",
+          "/quote.html"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/legal.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/js/i18n.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "https://al-azab.co/w.png"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "https://al-azab.co/docs/",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "services.html",
+          "general-supplies.html",
+          "#",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "brand-identity.html",
+          "projects.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html"
+        ],
+        "css_url": [
+          "assets/img/construction/showcase-1.webp"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/luxury-finishing.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css",
+          "assets/css/brand.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/js/i18n.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "https://al-azab.co/w.png"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "/projects.html",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "services.html",
+          "general-supplies.html",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "brand-identity.html",
+          "projects.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html",
+          "/quote.html"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/maintenance.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/vendor/php-email-form/validate.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "https://al-azab.co/w.png"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "services.html",
+          "general-supplies.html",
+          "#",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "brand-identity.html",
+          "/",
+          "projects.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html"
+        ],
+        "css_url": [
+          "assets/img/construction/showcase-2.webp"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/privacy.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/vendor/php-email-form/validate.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "https://al-azab.co/w.png"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "services.html",
+          "general-supplies.html",
+          "#",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "brand-identity.html",
+          "projects.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html"
+        ],
+        "css_url": [
+          "assets/img/construction/showcase-2.webp"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/project-details.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/js/i18n.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "assets/img/construction/project-5.webp",
+          "assets/img/construction/project-3.webp",
+          "https://al-azab.co/w.png",
+          "assets/img/construction/project-7.webp",
+          "assets/img/construction/project-11.webp",
+          "assets/img/construction/project-9.webp",
+          "assets/img/construction/project-8.webp"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "services.html",
+          "general-supplies.html",
+          "#",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "brand-identity.html",
+          "projects.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html"
+        ],
+        "css_url": [
+          "assets/img/construction/showcase-2.webp"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/projects.html",
+      "type": "html",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/quote.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/vendor/php-email-form/validate.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "https://al-azab.co/w.png"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "services.html",
+          "general-supplies.html",
+          "#",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "brand-identity.html",
+          "projects.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html"
+        ],
+        "css_url": [
+          "assets/img/construction/showcase-2.webp"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/service-detail.html",
+      "type": "html",
+      "paths": {}
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/service-details.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "https://al-azab.co/w.png"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "services.html",
+          "general-supplies.html",
+          "#",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "brand-identity.html",
+          "projects.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html"
+        ],
+        "css_url": [
+          "assets/img/construction/showcase-1.webp"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/services.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/vendor/php-email-form/validate.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "assets/img/construction/project-5.webp",
+          "assets/img/construction/project-3.webp",
+          "https://al-azab.co/w.png",
+          "assets/img/construction/project-7.webp",
+          "assets/img/construction/project-11.webp"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "services.html",
+          "general-supplies.html",
+          "#",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "brand-identity.html",
+          "service-details.html",
+          "projects.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html"
+        ],
+        "css_url": [
+          "assets/img/construction/showcase-2.webp"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/starter-page.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "https://al-azab.co/w.png"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "services.html",
+          "general-supplies.html",
+          "#",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "brand-identity.html",
+          "projects.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html"
+        ],
+        "css_url": [
+          "assets/img/construction/showcase-2.webp"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/team.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/vendor/php-email-form/validate.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "assets/img/construction/team-9.webp",
+          "assets/img/construction/team-3.webp",
+          "https://al-azab.co/w.png",
+          "assets/img/construction/team-5.webp",
+          "assets/img/construction/team-1.webp",
+          "assets/img/construction/team-2.webp",
+          "assets/img/construction/team-7.webp"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "services.html",
+          "general-supplies.html",
+          "#",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "brand-identity.html",
+          "projects.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html"
+        ],
+        "css_url": [
+          "assets/img/construction/showcase-2.webp"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/terms.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/vendor/php-email-form/validate.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "https://al-azab.co/w.png"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "services.html",
+          "general-supplies.html",
+          "#",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "brand-identity.html",
+          "projects.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html"
+        ],
+        "css_url": [
+          "assets/img/construction/showcase-2.webp"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/uberfix.html",
+      "type": "html",
+      "paths": {
+        "link_css": [
+          "assets/vendor/swiper/swiper-bundle.min.css",
+          "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+          "assets/css/main.css",
+          "assets/vendor/bootstrap/css/bootstrap.min.css",
+          "assets/vendor/glightbox/css/glightbox.min.css",
+          "assets/vendor/aos/aos.css"
+        ],
+        "script_src": [
+          "assets/vendor/purecounter/purecounter_vanilla.js",
+          "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+          "assets/vendor/swiper/swiper-bundle.min.js",
+          "assets/js/main.js",
+          "assets/vendor/aos/aos.js",
+          "assets/js/i18n.js",
+          "assets/vendor/glightbox/js/glightbox.min.js"
+        ],
+        "img_src": [
+          "https://al-azab.co/w.png"
+        ],
+        "link_href": [
+          "privacy.html",
+          "quote.html",
+          "team.html",
+          "terms.html",
+          "https://wa.me/c/201004006620",
+          "contact.html",
+          "index.html",
+          "legal.html",
+          "https://www.instagram.com/alazab.co/",
+          "luxury-finishing.html",
+          "https://www.linkedin.com/company/alazab",
+          "https://www.facebook.com/alazab24",
+          "services.html",
+          "general-supplies.html",
+          "#",
+          "https://alazab.dev/",
+          "clients.html",
+          "about.html",
+          "brand-identity.html",
+          "projects.html",
+          "https://www.youtube.com/@al-azab_co",
+          "maintenance.html"
+        ],
+        "css_url": [
+          "assets/img/construction/showcase-3.webp"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/www/about.html",
+      "type": "html",
+      "paths": {
+        "img_src": [
+          "/assets/webapp/images/webapp-logo.jpeg"
+        ],
+        "extends": [
+          "webapp/templates/base.html"
+        ],
+        "static_url": [
+          "/assets/webapp/images/webapp-logo.jpeg"
+        ]
+      }
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/www/home.html",
+      "type": "html",
+      "paths": {
+        "img_src": [
+          "{{ service.service_image }}"
+        ],
+        "link_href": [
+          "/{{ service.route }}#{{ service.name }}"
+        ],
+        "extends": [
+          "webapp/templates/base.html"
+        ]
+      }
+    }
+  ],
+  "missing_files": [
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/base.html",
+      "type": "link_css",
+      "path": "/assets/webapp/css/webapp.css"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/base.html",
+      "type": "static_url",
+      "path": "/assets/webapp/css/webapp.css"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/header.html",
+      "type": "img_src",
+      "path": "/assets/alazab/images/logo.png"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/header.html",
+      "type": "static_url",
+      "path": "/assets/alazab/images/logo.png"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/hero-carousel.html",
+      "type": "img_src",
+      "path": "/assets/alazab/images/projects/luxury-finishing-bg.webp"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/hero-carousel.html",
+      "type": "static_url",
+      "path": "/assets/alazab/images/projects/luxury-finishing-bg.webp"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/slide_show.html",
+      "type": "img_src",
+      "path": "/assets/alazab/images/projects/luxury-finishing-bg.webp"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/slide_show.html",
+      "type": "static_url",
+      "path": "/assets/alazab/images/projects/luxury-finishing-bg.webp"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/www/about.html",
+      "type": "img_src",
+      "path": "/assets/webapp/images/webapp-logo.jpeg"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/www/about.html",
+      "type": "static_url",
+      "path": "/assets/webapp/images/webapp-logo.jpeg"
+    }
+  ],
+  "absolute_paths": [
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/base.html",
+      "type": "link_css",
+      "path": "/assets/webapp/css/webapp.css"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/base.html",
+      "type": "static_url",
+      "path": "/assets/webapp/css/webapp.css"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/generators/service.html",
+      "type": "link_href",
+      "path": "/projects/{{ project.route }}"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/generators/service.html",
+      "type": "link_href",
+      "path": "/request-quote"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/generators/service.html",
+      "type": "link_href",
+      "path": "/contact"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/generators/service.html",
+      "type": "link_href",
+      "path": "/projects"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/footer.html",
+      "type": "link_href",
+      "path": "/about"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/footer.html",
+      "type": "link_href",
+      "path": "/#services"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/footer.html",
+      "type": "link_href",
+      "path": "/blog"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/footer.html",
+      "type": "link_href",
+      "path": "/request-quote"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/footer.html",
+      "type": "link_href",
+      "path": "/contact"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/footer.html",
+      "type": "link_href",
+      "path": "/projects"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/footer.html",
+      "type": "link_href",
+      "path": "/{{ line.route }}"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/header.html",
+      "type": "img_src",
+      "path": "/assets/alazab/images/logo.png"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/header.html",
+      "type": "link_href",
+      "path": "/about"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/header.html",
+      "type": "link_href",
+      "path": "/services"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/header.html",
+      "type": "link_href",
+      "path": "/"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/header.html",
+      "type": "link_href",
+      "path": "/blog"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/header.html",
+      "type": "link_href",
+      "path": "/request-quote"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/header.html",
+      "type": "link_href",
+      "path": "/contact"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/header.html",
+      "type": "link_href",
+      "path": "/projects"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/header.html",
+      "type": "link_href",
+      "path": "/{{ line.route }}"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/header.html",
+      "type": "static_url",
+      "path": "/assets/alazab/images/logo.png"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/hero-carousel.html",
+      "type": "img_src",
+      "path": "/assets/alazab/images/projects/luxury-finishing-bg.webp"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/hero-carousel.html",
+      "type": "link_href",
+      "path": "/services/laban-alasfour"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/hero-carousel.html",
+      "type": "link_href",
+      "path": "/services/finishing"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/hero-carousel.html",
+      "type": "link_href",
+      "path": "/request-quote"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/hero-carousel.html",
+      "type": "link_href",
+      "path": "/services/uberfix"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/hero-carousel.html",
+      "type": "link_href",
+      "path": "/services/brand-identity"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/hero-carousel.html",
+      "type": "static_url",
+      "path": "/assets/alazab/images/projects/luxury-finishing-bg.webp"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/slide_show.html",
+      "type": "img_src",
+      "path": "/assets/alazab/images/projects/luxury-finishing-bg.webp"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/slide_show.html",
+      "type": "link_href",
+      "path": "/services/laban-alasfour"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/slide_show.html",
+      "type": "link_href",
+      "path": "/services/finishing"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/slide_show.html",
+      "type": "link_href",
+      "path": "/request-quote"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/slide_show.html",
+      "type": "link_href",
+      "path": "/services/uberfix"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/slide_show.html",
+      "type": "link_href",
+      "path": "/services/brand-identity"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/includes/slide_show.html",
+      "type": "static_url",
+      "path": "/assets/alazab/images/projects/luxury-finishing-bg.webp"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/brand-identity.html",
+      "type": "link_href",
+      "path": "/projects.html"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/brand-identity.html",
+      "type": "link_href",
+      "path": "/quote.html"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/laban-alasfour.html",
+      "type": "link_href",
+      "path": "/contact.html"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/laban-alasfour.html",
+      "type": "link_href",
+      "path": "/quote.html"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/luxury-finishing.html",
+      "type": "link_href",
+      "path": "/projects.html"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/luxury-finishing.html",
+      "type": "link_href",
+      "path": "/quote.html"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/templates/pages/maintenance.html",
+      "type": "link_href",
+      "path": "/"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/www/about.html",
+      "type": "img_src",
+      "path": "/assets/webapp/images/webapp-logo.jpeg"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/www/about.html",
+      "type": "static_url",
+      "path": "/assets/webapp/images/webapp-logo.jpeg"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/www/home.html",
+      "type": "link_href",
+      "path": "/{{ service.route }}#{{ service.name }}"
+    }
+  ],
+  "relative_paths": [
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/css/main.css",
+      "type": "css_url",
+      "path": "../fonts/Jozoor.otf"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap-icons/bootstrap-icons.css",
+      "type": "css_url",
+      "path": "./fonts/bootstrap-icons.woff?e34853135f9e39acf64315236852cd5a"
+    },
+    {
+      "file": "/mnt/d/site/site-html/webapp/webapp/public/vendor/bootstrap-icons/bootstrap-icons.css",
+      "type": "css_url",
+      "path": "./fonts/bootstrap-icons.woff2?e34853135f9e39acf64315236852cd5a"
+    }
+  ],
+  "path_summary": {
+    "css_url": 25,
+    "js_import": 4,
+    "link_href": 575,
+    "link_css": 132,
+    "script_src": 145,
+    "include": 3,
+    "static_url": 5,
+    "img_src": 73,
+    "extends": 3
+  }
+}

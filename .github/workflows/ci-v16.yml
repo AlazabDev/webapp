@@ -53,8 +53,8 @@ jobs:
           sudo apt-get install -y mariadb-client redis-tools
           corepack enable
 
-      - name: Install Bench
-        run: pip install frappe-bench
+      - name: Install Bench and lint tooling
+        run: pip install frappe-bench ruff
 
       - name: Initialize Frappe v16
         run: |

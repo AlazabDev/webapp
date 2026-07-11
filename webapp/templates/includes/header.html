@@ -1,40 +1,280 @@
-<!-- Navbar -->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-    <div class="container-fluid">
-        <!-- Logo -->
+<!-- ========================================================== -->
+<!-- شريط التنقل المحسّن - شركة العزب للمقاولات العامة          -->
+<!-- يدعم اللغة العربية، متجاوب، مع تأثيرات حركية احترافية     -->
+<!-- ========================================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" 
+     style="background: rgba(13, 13, 13, 0.95) !important; 
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid rgba(212, 168, 55, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);">
+    <div class="container">
+
+        <!-- ====== الشعار ====== -->
         <a class="navbar-brand d-flex align-items-center" href="/">
-            <img src="/assets/webapp/images/logo.jpg" alt="webapp Logo" class="me-2"
-                style="height:48px; width:auto; max-width:300px;">
+            <img src="/assets/alazab/images/logo.png" 
+                 alt="شعار شركة العزب للمقاولات" 
+                 class="me-2"
+                 style="height: 55px; width: auto; filter: drop-shadow(0 2px 8px rgba(212, 168, 55, 0.3));">
+            <span class="fw-bold d-none d-sm-block" 
+                  style="color: #d4a837; font-size: 1.4rem; letter-spacing: 1px;">
+                العزب
+            </span>
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <!-- ====== زر القائمة للجوال ====== -->
+        <button class="navbar-toggler border-0" type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#mainNavbar" 
+                aria-controls="mainNavbar" 
+                aria-expanded="false" 
+                aria-label="تبديل القائمة">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
+
+        <!-- ====== روابط القائمة ====== -->
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto gap-2 gap-lg-3">
+
+                <!-- الرئيسية -->
                 <li class="nav-item">
-                    <a class="nav-link" href="/home">Home</a>
+                    <a class="nav-link {% if request.path == '/' %}active{% endif %}" 
+                       href="/" 
+                       style="font-size: 0.95rem; padding: 0.6rem 0.8rem;">
+                        <i class="bi bi-house-fill me-1"></i> الرئيسية
+                    </a>
                 </li>
+
+                <!-- من نحن -->
+                <li class="nav-item">
+                    <a class="nav-link {% if 'about' in request.path %}active{% endif %}" 
+                       href="/about" 
+                       style="font-size: 0.95rem; padding: 0.6rem 0.8rem;">
+                        <i class="bi bi-building-fill me-1"></i> من نحن
+                    </a>
+                </li>
+
+                <!-- خطوط الإنتاج (منسدلة) -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" role="button" href="#" data-bs-toggle="dropdown">Services</a>
-                    <ul class="dropdown-menu">
-                        {% for service in services %}
-                        <li><a class="dropdown-item" href="/{{ service.route }}#{{ service.name }}"
-                                id="{{ service.service_name }}">{{
-                                service.service_name }}</a></li>
+                    <a class="nav-link dropdown-toggle" 
+                       href="#" 
+                       role="button" 
+                       data-bs-toggle="dropdown" 
+                       aria-expanded="false"
+                       style="font-size: 0.95rem; padding: 0.6rem 0.8rem;">
+                        <i class="bi bi-grid-3x3-gap-fill me-1"></i> خطوط الإنتاج
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" 
+                        style="background: rgba(20, 20, 20, 0.98) !important;
+                               backdrop-filter: blur(10px);
+                               border: 1px solid rgba(212, 168, 55, 0.2);
+                               box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+                               padding: 0.5rem 0;">
+
+                        <!-- جلب خطوط الإنتاج ديناميكياً -->
+                        {% set production_lines = frappe.db.get_all('Production Line', 
+                            fields=['name', 'route', 'icon'], 
+                            order_by='priority asc') %}
+
+                        {% for line in production_lines %}
+                        <li>
+                            <a class="dropdown-item" 
+                               href="/{{ line.route }}"
+                               style="padding: 0.6rem 1.5rem; 
+                                      color: #ddd;
+                                      transition: all 0.3s ease;
+                                      font-size: 0.9rem;"
+                               onmouseover="this.style.backgroundColor='rgba(212, 168, 55, 0.15)'; this.style.color='#d4a837';"
+                               onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ddd';">
+                                {% if line.icon %}
+                                <i class="bi {{ line.icon }} me-2" style="color: #d4a837;"></i>
+                                {% endif %}
+                                {{ line.name }}
+                            </a>
+                        </li>
                         {% endfor %}
+
+                        <!-- فاصل -->
+                        <li><hr class="dropdown-divider" style="border-color: rgba(212, 168, 55, 0.2);"></li>
+
+                        <!-- عرض كل الخدمات -->
+                        <li>
+                            <a class="dropdown-item" 
+                               href="/services"
+                               style="padding: 0.6rem 1.5rem; 
+                                      color: #d4a837;
+                                      font-weight: 600;
+                                      font-size: 0.9rem;">
+                                <i class="bi bi-arrow-right-circle me-2"></i>
+                                جميع الخدمات
+                            </a>
+                        </li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Courses</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Coming Soon</a></li>
-                    </ul>
-                </li>
+
+                <!-- مشاريعنا -->
                 <li class="nav-item">
-                    <a class="nav-link" href="/about#about-company">About Us</a>
+                    <a class="nav-link {% if 'projects' in request.path %}active{% endif %}" 
+                       href="/projects" 
+                       style="font-size: 0.95rem; padding: 0.6rem 0.8rem;">
+                        <i class="bi bi-images-fill me-1"></i> مشاريعنا
+                    </a>
                 </li>
+
+                <!-- المدونة / أخبار -->
+                <li class="nav-item">
+                    <a class="nav-link {% if 'blog' in request.path %}active{% endif %}" 
+                       href="/blog" 
+                       style="font-size: 0.95rem; padding: 0.6rem 0.8rem;">
+                        <i class="bi bi-newspaper-fill me-1"></i> المدونة
+                    </a>
+                </li>
+
+                <!-- تواصل معنا -->
+                <li class="nav-item">
+                    <a class="nav-link {% if 'contact' in request.path %}active{% endif %}" 
+                       href="/contact" 
+                       style="font-size: 0.95rem; padding: 0.6rem 0.8rem;">
+                        <i class="bi bi-envelope-fill me-1"></i> تواصل
+                    </a>
+                </li>
+
+                <!-- ====== زر مميز: اطلب عرض سعر ====== -->
+                <li class="nav-item">
+                    <a class="btn btn-sm px-3 py-2 ms-2" 
+                       href="/request-quote"
+                       style="background: linear-gradient(135deg, #d4a837, #b8922f);
+                              color: #0d0d0d;
+                              font-weight: 700;
+                              border: none;
+                              border-radius: 25px;
+                              transition: all 0.3s ease;
+                              box-shadow: 0 4px 15px rgba(212, 168, 55, 0.4);
+                              font-size: 0.85rem;">
+                        <i class="bi bi-file-earmark-text me-1"></i>
+                        اطلب عرض سعر
+                    </a>
+                </li>
+
             </ul>
         </div>
     </div>
 </nav>
+
+<!-- ========================================================== -->
+<!-- CSS إضافي للتحسينات                                       -->
+<!-- ========================================================== -->
+<style>
+    /* تنسيق عام للروابط */
+    .navbar .nav-link {
+        color: rgba(255, 255, 255, 0.8) !important;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+        position: relative;
+    }
+
+    /* تأثير التمرير على الروابط */
+    .navbar .nav-link:hover {
+        color: #d4a837 !important;
+        background: rgba(212, 168, 55, 0.1);
+        transform: translateY(-1px);
+    }
+
+    /* تنسيق الرابط النشط */
+    .navbar .nav-link.active {
+        color: #d4a837 !important;
+        background: rgba(212, 168, 55, 0.12);
+    }
+
+    /* خط ذهبي تحت الرابط النشط */
+    .navbar .nav-link.active::after {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 2px;
+        background: #d4a837;
+        border-radius: 4px;
+    }
+
+    /* تنسيق القوائم المنسدلة */
+    .dropdown-menu {
+        border-radius: 12px;
+        margin-top: 8px;
+        min-width: 220px;
+    }
+
+    /* تنسيق عناصر القائمة المنسدلة عند التمرير */
+    .dropdown-item {
+        transition: all 0.2s ease;
+    }
+
+    /* زر طلب عرض السعر - تأثير التمرير */
+    .navbar .btn:hover {
+        transform: scale(1.05) translateY(-2px);
+        box-shadow: 0 6px 25px rgba(212, 168, 55, 0.6) !important;
+        background: linear-gradient(135deg, #e8c44a, #d4a837) !important;
+    }
+
+    /* تحسين ظهور القائمة على الجوال */
+    @media (max-width: 992px) {
+        .navbar .nav-link {
+            padding: 0.8rem 1rem !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .navbar .btn {
+            margin: 0.5rem 0 !important;
+            width: 100%;
+            text-align: center;
+        }
+
+        .dropdown-menu {
+            background: rgba(30, 30, 30, 0.98) !important;
+            border: none;
+            border-radius: 8px;
+            margin: 0;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-item {
+            padding: 0.8rem 1.5rem !important;
+        }
+    }
+
+    /* تحسين الشفافية في التمرير */
+    .navbar {
+        transition: all 0.4s ease;
+    }
+
+    /* عند التمرير للأسفل يمكن تغيير الخلفية (اختياري) */
+    .navbar-scrolled {
+        background: rgba(0, 0, 0, 0.98) !important;
+        border-bottom: 2px solid #d4a837 !important;
+    }
+</style>
+
+<!-- ========================================================== -->
+<!-- JavaScript لإضافة تأثير التمرير (اختياري)                 -->
+<!-- ========================================================== -->
+<script>
+    // تغيير شفافية الشريط عند التمرير لأسفل
+    document.addEventListener('DOMContentLoaded', function() {
+        const navbar = document.querySelector('.navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (currentScroll > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+    });
+</script>

@@ -1,0 +1,467 @@
+<!-- ========================================================== -->
+<!-- سلايدر البطل (Hero Carousel) - شركة العزب للمقاولات       -->
+<!-- يعرض المشاريع والخدمات الرئيسية بأسلوب فاخر وجذاب         -->
+<!-- ========================================================== -->
+
+<section class="hero-carousel-section" style="margin-top: 70px; position: relative;">
+    <div id="alazabCarousel" class="carousel slide carousel-fade" 
+         data-bs-ride="carousel" 
+         data-bs-interval="6000" 
+         data-bs-pause="hover">
+
+        <!-- ====== مؤشرات التقدم ====== -->
+        <div class="carousel-indicators" style="bottom: 30px; z-index: 20;">
+            <button type="button" data-bs-target="#alazabCarousel" 
+                    data-bs-slide-to="0" class="active" 
+                    aria-current="true" aria-label="الشريحة 1"
+                    style="width: 45px; height: 4px; border-radius: 4px; background: rgba(255,255,255,0.4); border: none; transition: all 0.3s ease;">
+            </button>
+            <button type="button" data-bs-target="#alazabCarousel" 
+                    data-bs-slide-to="1" aria-label="الشريحة 2"
+                    style="width: 45px; height: 4px; border-radius: 4px; background: rgba(255,255,255,0.4); border: none; transition: all 0.3s ease;">
+            </button>
+            <button type="button" data-bs-target="#alazabCarousel" 
+                    data-bs-slide-to="2" aria-label="الشريحة 3"
+                    style="width: 45px; height: 4px; border-radius: 4px; background: rgba(255,255,255,0.4); border: none; transition: all 0.3s ease;">
+            </button>
+            <button type="button" data-bs-target="#alazabCarousel" 
+                    data-bs-slide-to="3" aria-label="الشريحة 4"
+                    style="width: 45px; height: 4px; border-radius: 4px; background: rgba(255,255,255,0.4); border: none; transition: all 0.3s ease;">
+            </button>
+        </div>
+
+        <!-- ====== الشرائح ====== -->
+        <div class="carousel-inner">
+
+            <!-- الشريحة 1: التشطيب الراقي -->
+            <div class="carousel-item active" data-bs-interval="6000">
+                <div class="slide-background" 
+                     style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+                            min-height: 90vh;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            position: relative;
+                            overflow: hidden;">
+                    
+                    <!-- خلفية مزخرفة -->
+                    <div class="slide-decoration" 
+                         style="position: absolute; top: -50%; right: -10%; width: 70%; height: 150%; 
+                                background: radial-gradient(circle, rgba(212,168,55,0.08) 0%, transparent 70%);
+                                transform: rotate(-20deg);">
+                    </div>
+                    
+                    <!-- صورة خلفية (استخدم صورة حقيقية لمشروع) -->
+                    <img src="/assets/alazab/images/projects/luxury-finishing-bg.webp" 
+                         alt="التشطيب الراقي - شركة العزب"
+                         class="d-none d-lg-block" 
+                         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+                                object-fit: cover; opacity: 0.15;">
+
+                    <div class="container position-relative" style="z-index: 10;">
+                        <div class="row justify-content-start">
+                            <div class="col-lg-7 col-md-9">
+                                <div class="slide-content" style="padding: 3rem 0;">
+                                    <!-- أيقونة أو رقم -->
+                                    <div class="slide-badge mb-3" 
+                                         style="display: inline-block; 
+                                                background: rgba(212,168,55,0.15);
+                                                border: 1px solid rgba(212,168,55,0.3);
+                                                padding: 0.4rem 1.2rem;
+                                                border-radius: 30px;
+                                                font-size: 0.8rem;
+                                                color: #d4a837;
+                                                letter-spacing: 2px;">
+                                        <i class="bi bi-star-fill me-1"></i> خبرة 20+ عاماً
+                                    </div>
+
+                                    <h1 class="display-3 fw-bold text-white mb-3" 
+                                        style="font-family: 'Cairo', sans-serif; line-height: 1.2;">
+                                        تشطيب راقٍ<br>
+                                        <span style="color: #d4a837;">بمعايير عالمية</span>
+                                    </h1>
+                                    
+                                    <p class="lead text-white-50 mb-4" style="font-size: 1.15rem; max-width: 600px;">
+                                        نحول مساحاتكم إلى تحف فنية باستخدام أفضل الخامات العالمية 
+                                        وتقنيات KNX الذكية، مع ضمان سنتين على كامل الأعمال.
+                                    </p>
+
+                                    <!-- أزرار الدعوة -->
+                                    <div class="d-flex flex-wrap gap-3">
+                                        <a href="/services/finishing" 
+                                           class="btn btn-lg px-5 py-3"
+                                           style="background: linear-gradient(135deg, #d4a837, #b8922f);
+                                                  color: #0d0d0d;
+                                                  font-weight: 700;
+                                                  border: none;
+                                                  border-radius: 50px;
+                                                  transition: all 0.3s ease;
+                                                  box-shadow: 0 8px 30px rgba(212,168,55,0.4);">
+                                            <i class="bi bi-arrow-right-circle me-2"></i>
+                                            اكتشف المزيد
+                                        </a>
+                                        <a href="/request-quote" 
+                                           class="btn btn-lg px-5 py-3"
+                                           style="background: transparent;
+                                                  color: #fff;
+                                                  font-weight: 600;
+                                                  border: 2px solid rgba(255,255,255,0.3);
+                                                  border-radius: 50px;
+                                                  transition: all 0.3s ease;
+                                                  backdrop-filter: blur(5px);">
+                                            <i class="bi bi-file-earmark-text me-2"></i>
+                                            اطلب عرض سعر
+                                        </a>
+                                    </div>
+
+                                    <!-- إحصائيات سريعة -->
+                                    <div class="row mt-5 g-3">
+                                        <div class="col-4">
+                                            <div class="stat-item">
+                                                <span class="d-block display-6 fw-bold text-white" style="font-size: 2rem;">300+</span>
+                                                <span class="text-secondary" style="font-size: 0.85rem;">مشروع منجز</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="stat-item">
+                                                <span class="d-block display-6 fw-bold" style="font-size: 2rem; color: #d4a837;">20</span>
+                                                <span class="text-secondary" style="font-size: 0.85rem;">سنة خبرة</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="stat-item">
+                                                <span class="d-block display-6 fw-bold text-white" style="font-size: 2rem;">50+</span>
+                                                <span class="text-secondary" style="font-size: 0.85rem;">خبير متخصص</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الشريحة 2: هوية العلامة التجارية -->
+            <div class="carousel-item" data-bs-interval="6000">
+                <div class="slide-background" 
+                     style="background: linear-gradient(135deg, #0d0d1a 0%, #1a1a0d 100%);
+                            min-height: 90vh;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            position: relative;
+                            overflow: hidden;">
+                    
+                    <div class="slide-decoration" 
+                         style="position: absolute; bottom: -30%; left: -10%; width: 60%; height: 120%; 
+                                background: radial-gradient(circle, rgba(212,168,55,0.06) 0%, transparent 70%);">
+                    </div>
+
+                    <div class="container position-relative" style="z-index: 10;">
+                        <div class="row justify-content-end">
+                            <div class="col-lg-7 col-md-9 text-end">
+                                <div class="slide-content" style="padding: 3rem 0;">
+                                    <div class="slide-badge mb-3" 
+                                         style="display: inline-block; 
+                                                background: rgba(212,168,55,0.15);
+                                                border: 1px solid rgba(212,168,55,0.3);
+                                                padding: 0.4rem 1.2rem;
+                                                border-radius: 30px;
+                                                font-size: 0.8rem;
+                                                color: #d4a837;
+                                                letter-spacing: 2px;">
+                                        <i class="bi bi-building-fill me-1"></i> هوية تجارية
+                                    </div>
+
+                                    <h2 class="display-3 fw-bold text-white mb-3" 
+                                        style="font-family: 'Cairo', sans-serif; line-height: 1.2;">
+                                        هوية علامتك<br>
+                                        <span style="color: #d4a837;">في 21 يوماً</span>
+                                    </h2>
+                                    
+                                    <p class="lead text-white-50 mb-4" style="font-size: 1.15rem;">
+                                        من ترجمة Brand Book إلى رسومات تنفيذية، وتنفيذ الديكور والإضاءة، 
+                                        وتسليم فرعك جاهزاً للافتتاح. خبرة مع شبكة أبو عوف وأكبر العلامات.
+                                    </p>
+
+                                    <div class="d-flex flex-wrap gap-3 justify-content-end">
+                                        <a href="/services/brand-identity" 
+                                           class="btn btn-lg px-5 py-3"
+                                           style="background: linear-gradient(135deg, #d4a837, #b8922f);
+                                                  color: #0d0d0d;
+                                                  font-weight: 700;
+                                                  border: none;
+                                                  border-radius: 50px;
+                                                  transition: all 0.3s ease;
+                                                  box-shadow: 0 8px 30px rgba(212,168,55,0.4);">
+                                            <i class="bi bi-arrow-left-circle me-2"></i>
+                                            تعرف على الخدمة
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الشريحة 3: أوبرفيكس للصيانة -->
+            <div class="carousel-item" data-bs-interval="5000">
+                <div class="slide-background" 
+                     style="background: linear-gradient(135deg, #0a1a0a 0%, #1a1a1a 100%);
+                            min-height: 90vh;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            position: relative;
+                            overflow: hidden;">
+
+                    <div class="container position-relative" style="z-index: 10;">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 col-md-10 text-center">
+                                <div class="slide-content" style="padding: 3rem 0;">
+                                    <div class="slide-badge mb-3" 
+                                         style="display: inline-block; 
+                                                background: rgba(212,168,55,0.15);
+                                                border: 1px solid rgba(212,168,55,0.3);
+                                                padding: 0.4rem 1.2rem;
+                                                border-radius: 30px;
+                                                font-size: 0.8rem;
+                                                color: #d4a837;
+                                                letter-spacing: 2px;">
+                                        <i class="bi bi-clock-fill me-1"></i> استجابة خلال ساعتين
+                                    </div>
+
+                                    <h2 class="display-3 fw-bold text-white mb-3" 
+                                        style="font-family: 'Cairo', sans-serif; line-height: 1.2;">
+                                        أوبرفيكس<br>
+                                        <span style="color: #d4a837;">صيانة احترافية</span>
+                                    </h2>
+                                    
+                                    <p class="lead text-white-50 mb-4" style="font-size: 1.15rem; max-width: 700px; margin: 0 auto;">
+                                        عقود صيانة شهرية وطوارئ لسلاسل الفروع. كشف تسريبات بالكاميرا الحرارية، 
+                                        واستبدال قطع أصلية، وتقارير PDF بعد كل زيارة.
+                                    </p>
+
+                                    <div class="d-flex flex-wrap gap-3 justify-content-center">
+                                        <a href="/services/uberfix" 
+                                           class="btn btn-lg px-5 py-3"
+                                           style="background: linear-gradient(135deg, #d4a837, #b8922f);
+                                                  color: #0d0d0d;
+                                                  font-weight: 700;
+                                                  border: none;
+                                                  border-radius: 50px;
+                                                  transition: all 0.3s ease;
+                                                  box-shadow: 0 8px 30px rgba(212,168,55,0.4);">
+                                            <i class="bi bi-tools me-2"></i>
+                                            طلب صيانة فورية
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الشريحة 4: لبن العصفور - توريد الخامات -->
+            <div class="carousel-item" data-bs-interval="5000">
+                <div class="slide-background" 
+                     style="background: linear-gradient(135deg, #1a0d0d 0%, #0d0d1a 100%);
+                            min-height: 90vh;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            position: relative;
+                            overflow: hidden;">
+
+                    <div class="container position-relative" style="z-index: 10;">
+                        <div class="row justify-content-start">
+                            <div class="col-lg-7 col-md-9">
+                                <div class="slide-content" style="padding: 3rem 0;">
+                                    <div class="slide-badge mb-3" 
+                                         style="display: inline-block; 
+                                                background: rgba(212,168,55,0.15);
+                                                border: 1px solid rgba(212,168,55,0.3);
+                                                padding: 0.4rem 1.2rem;
+                                                border-radius: 30px;
+                                                font-size: 0.8rem;
+                                                color: #d4a837;
+                                                letter-spacing: 2px;">
+                                        <i class="bi bi-box-seam-fill me-1"></i> توريد من 6 دول
+                                    </div>
+
+                                    <h2 class="display-3 fw-bold text-white mb-3" 
+                                        style="font-family: 'Cairo', sans-serif; line-height: 1.2;">
+                                        لبن العصفور<br>
+                                        <span style="color: #d4a837;">نوفر المستحيل</span>
+                                    </h2>
+                                    
+                                    <p class="lead text-white-50 mb-4" style="font-size: 1.15rem;">
+                                        توريد خامات نادرة من إيطاليا، إسبانيا، البرازيل: زجاج PDLC الذكي، 
+                                        أخشاب FSC، رخام طبيعي، وإكسسوارات Grohe/Hansgrohe.
+                                    </p>
+
+                                    <div class="d-flex flex-wrap gap-3">
+                                        <a href="/services/laban-alasfour" 
+                                           class="btn btn-lg px-5 py-3"
+                                           style="background: linear-gradient(135deg, #d4a837, #b8922f);
+                                                  color: #0d0d0d;
+                                                  font-weight: 700;
+                                                  border: none;
+                                                  border-radius: 50px;
+                                                  transition: all 0.3s ease;
+                                                  box-shadow: 0 8px 30px rgba(212,168,55,0.4);">
+                                            <i class="bi bi-arrow-right-circle me-2"></i>
+                                            استفسر عن الخامات
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== أزرار التحكم ====== -->
+        <button class="carousel-control-prev" type="button" 
+                data-bs-target="#alazabCarousel" data-bs-slide="prev"
+                style="width: 60px; height: 60px; background: rgba(0,0,0,0.5); border-radius: 50%; top: 50%; transform: translateY(-50%); left: 30px; border: 2px solid rgba(212,168,55,0.3); backdrop-filter: blur(5px);">
+            <span class="carousel-control-prev-icon" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));"></span>
+        </button>
+        <button class="carousel-control-next" type="button" 
+                data-bs-target="#alazabCarousel" data-bs-slide="next"
+                style="width: 60px; height: 60px; background: rgba(0,0,0,0.5); border-radius: 50%; top: 50%; transform: translateY(-50%); right: 30px; border: 2px solid rgba(212,168,55,0.3); backdrop-filter: blur(5px);">
+            <span class="carousel-control-next-icon" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));"></span>
+        </button>
+    </div>
+</section>
+
+<!-- ========================================================== -->
+<!-- CSS إضافي للتحسينات                                       -->
+<!-- ========================================================== -->
+<style>
+    /* تنسيق عام للسلايدر */
+    .hero-carousel-section {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* تنسيق الشرائح */
+    .carousel-item {
+        transition: transform 1s ease, opacity 1s ease;
+    }
+
+    /* تأثير التلاشي عند التبديل */
+    .carousel-fade .carousel-item {
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+    .carousel-fade .carousel-item.active {
+        opacity: 1;
+    }
+
+    /* تحسين النصوص */
+    .slide-content {
+        animation: slideUp 1s ease-out;
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* تنسيق أزرار التحكم */
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+        background: rgba(212,168,55,0.2) !important;
+        border-color: #d4a837 !important;
+        transform: translateY(-50%) scale(1.1);
+        transition: all 0.3s ease;
+    }
+
+    /* تنسيق المؤشرات النشطة */
+    .carousel-indicators .active {
+        background: #d4a837 !important;
+        width: 60px !important;
+        box-shadow: 0 0 20px rgba(212,168,55,0.4);
+    }
+
+    .carousel-indicators button:hover {
+        background: rgba(212,168,55,0.6) !important;
+        transform: scale(1.1);
+    }
+
+    /* تحسين المظهر على الجوال */
+    @media (max-width: 768px) {
+        .slide-content {
+            text-align: center !important;
+            padding: 1.5rem !important;
+        }
+
+        .slide-content h1,
+        .slide-content h2 {
+            font-size: 2.2rem !important;
+        }
+
+        .slide-content .lead {
+            font-size: 1rem !important;
+        }
+
+        .slide-content .btn {
+            width: 100%;
+            text-align: center;
+            padding: 0.8rem !important;
+            font-size: 0.9rem !important;
+        }
+
+        .slide-content .stat-item {
+            text-align: center;
+        }
+
+        .stat-item .display-6 {
+            font-size: 1.5rem !important;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 40px !important;
+            height: 40px !important;
+            left: 10px !important;
+            right: 10px !important;
+        }
+
+        .slide-badge {
+            font-size: 0.7rem !important;
+            padding: 0.3rem 0.8rem !important;
+        }
+
+        .carousel-indicators button {
+            width: 30px !important;
+            height: 3px !important;
+        }
+    }
+
+    /* تحسينات إضافية */
+    .btn {
+        transition: all 0.3s ease !important;
+    }
+
+    .btn:hover {
+        transform: translateY(-3px) scale(1.02);
+    }
+
+    /* تنسيق الخلفية للشرائح */
+    .slide-background {
+        background-size: cover !important;
+        background-position: center !important;
+    }
+</style>

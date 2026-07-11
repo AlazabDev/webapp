@@ -1,0 +1,10 @@
+{% extends "webapp/templates/webapp_base.html" %}
+{% block title %}الخدمات | شركة العزب{% endblock %}
+{% block content %}
+<section class="page-hero"><div class="container"><span class="eyebrow">الخدمات</span><h1>خدمات متخصصة ضمن دورة تشغيل واحدة</h1><p>اختر المسار المناسب لاحتياج المشروع أو الفرع.</p></div></section>
+<section class="section-space"><div class="container"><div class="row g-4">
+{% for service in services %}
+<div class="col-md-6 col-xl-4"><article class="service-card h-100"><div class="service-card-body"><div class="service-icon"><i class="bi {{ service.icon or 'bi-gear' }}"></i></div><h2 class="h4">{{ service.service_name }}</h2><p>{{ service.short_description }}</p><a class="stretched-link" href="/{{ service.route }}">عرض التفاصيل <i class="bi bi-arrow-left"></i></a></div></article></div>
+{% else %}<div class="col-12"><div class="empty-state">لا توجد خدمات منشورة حاليًا.</div></div>{% endfor %}
+</div></div></section>
+{% endblock %}

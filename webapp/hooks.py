@@ -9,7 +9,7 @@ fixtures = [{"doctype": "Service", "filters": [["published", "=", 1]]}]
 
 website_generators = ["Service"]
 update_website_context = "webapp.overrides.website_context"
-homepage = "site"
+home_page = "site"
 
 add_to_apps_screen = [
     {
@@ -17,6 +17,7 @@ add_to_apps_screen = [
         "logo": "/assets/webapp/images/logo/logo.png",
         "title": "Alazab Website",
         "route": "/site",
+        "has_permission": "frappe.permissions.check_app_permission",
     }
 ]
 

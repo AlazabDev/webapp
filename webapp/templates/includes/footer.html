@@ -1,53 +1,80 @@
-<footer class="site-footer">
-  <div class="container py-5">
-    <div class="row g-4">
+<footer id="footer" class="footer dark-background">
+  <div class="container">
+    <div class="row gy-5">
       <div class="col-lg-4">
-        <h2 class="h4 mb-3">شركة العزب</h2>
-        <p class="footer-copy">حلول متكاملة للمقاولات والتشطيبات، تنفيذ هويات الفروع، الصيانة والتوريدات داخل مصر.</p>
-        <div class="d-flex gap-3 fs-5" aria-label="حسابات التواصل الاجتماعي">
-          <a href="https://www.facebook.com/alazab24" target="_blank" rel="noopener" aria-label="فيسبوك"><i class="bi bi-facebook"></i></a>
-          <a href="https://www.instagram.com/alazab.co/" target="_blank" rel="noopener" aria-label="إنستجرام"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.linkedin.com/company/alazab" target="_blank" rel="noopener" aria-label="لينكدإن"><i class="bi bi-linkedin"></i></a>
-          <a href="https://www.youtube.com/@al-azab_co" target="_blank" rel="noopener" aria-label="يوتيوب"><i class="bi bi-youtube"></i></a>
+        <div class="footer-brand">
+          <a href="/" class="logo d-flex align-items-center mb-3" aria-label="Alazab">
+            <img src="https://al-azab.co/w.png" alt="Alazab logo" class="logo-img" />
+          </a>
+          <p class="tagline" data-i18n="footer.tagline">
+            With Alazab, you will find everything you need — from creative architectural solutions to artistic touches that ensure a unique experience and refined spaces.
+          </p>
+
+          <div class="social-links mt-4">
+            <a href="https://www.facebook.com/alazab24" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/alazab.co/" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/alazab" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://wa.me/c/201004006620" aria-label="Whatsapp"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://www.youtube.com/@al-azab_co" aria-label="Youtube"><i class="bi bi-youtube"></i></a>
+          </div>
         </div>
       </div>
 
-      <div class="col-6 col-lg-2">
-        <h3 class="h6">روابط سريعة</h3>
-        <ul class="list-unstyled footer-links">
-          <li><a href="/about">من نحن</a></li>
-          <li><a href="/services">الخدمات</a></li>
-          <li><a href="/projects">المشروعات</a></li>
-          <li><a href="/blog">المدونة</a></li>
-        </ul>
+      <div class="col-lg-6">
+        <div class="footer-links-grid">
+          <div class="row">
+            <div class="col-6 col-md-4">
+              <h5 data-i18n="footer.company">Company</h5>
+              <ul class="list-unstyled">
+                <li><a href="/about" data-i18n="company.aboutUs">About Us</a></li>
+                <li><a href="/team" data-i18n="company.ourTeam">Our Team</a></li>
+                <li><a href="/clients" data-i18n="nav.clients">Clients</a></li>
+                <li><a href="/legal" data-i18n="nav.legal">Legal</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-md-4">
+              <h5 data-i18n="footer.services">Services</h5>
+              <ul class="list-unstyled">
+                <li><a href="/luxury-finishing" data-i18n="nav.luxuryFinishing">Luxury Finishing</a></li>
+                <li><a href="/brand-identity" data-i18n="nav.brandIdentity">Brand Identity</a></li>
+                <li><a href="/maintenance" data-i18n="nav.maintenance">Maintenance</a></li>
+                <li><a href="/general-supplies" data-i18n="nav.supplies">General Supplies</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-md-4">
+              <h5 data-i18n="footer.support">Support</h5>
+              <ul class="list-unstyled">
+                <li><a href="/contact" data-i18n="cta.contact">Contact Us</a></li>
+                <li><a href="/privacy" data-i18n="footer.privacy">Privacy Policy</a></li>
+                <li><a href="/terms" data-i18n="footer.terms">Terms of Service</a></li>
+                <li><a href="/legal" data-i18n="nav.legal">Legal</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="col-6 col-lg-3">
-        <h3 class="h6">الخدمات</h3>
-        <ul class="list-unstyled footer-links">
-          {% for service in services[:5] %}
-          <li><a href="/{{ service.route }}">{{ service.service_name }}</a></li>
-          {% else %}
-          <li><a href="/services">استعرض خدمات العزب</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-
-      <div class="col-lg-3">
-        <h3 class="h6">التواصل</h3>
-        <ul class="list-unstyled footer-links">
-          <li><a href="mailto:info@alazab.com"><i class="bi bi-envelope ms-2"></i>info@alazab.com</a></li>
-          <li><a href="tel:+201004006620"><i class="bi bi-telephone ms-2"></i>+20 100 400 6620</a></li>
-          <li><a href="https://wa.me/201004006620" target="_blank" rel="noopener"><i class="bi bi-whatsapp ms-2"></i>واتساب</a></li>
-          <li><span><i class="bi bi-geo-alt ms-2"></i>القاهرة، مصر</span></li>
-        </ul>
+      <div class="col-lg-2">
+        <div class="footer-cta">
+          <h5 data-i18n="footer.letsConnect">Let's Connect</h5>
+          <a href="/contact" class="btn btn-outline" data-i18n="footer.getInTouch">Get in Touch</a>
+        </div>
       </div>
     </div>
   </div>
-  <div class="footer-bottom py-3">
-    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
-      <span>© {{ frappe.utils.nowdate()[:4] }} شركة العزب. جميع الحقوق محفوظة.</span>
-      <span>تشغيل موثوق وتنفيذ منضبط.</span>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="footer-bottom-content">
+            <p class="mb-0">© <span class="sitename">Alazab</span>. <span data-i18n="footer.rights">All Rights Reserved.</span></p>
+            <div class="credits">
+              <span data-i18n="footer.designedBy">Designed by</span> <a href="https://alazab.dev/">Alazab Dev</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </footer>

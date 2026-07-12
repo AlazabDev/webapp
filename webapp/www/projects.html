@@ -1,14 +1,105 @@
-{% extends "webapp/templates/webapp_base.html" %}
-{% block title %}دورة المشروعات | شركة العزب{% endblock %}
+﻿{% extends "webapp/templates/webapp_base.html" %}
+
+{% block title %}مشاريعنا | شركة العزب{% endblock %}
+
 {% block content %}
-<section class="page-hero"><div class="container"><span class="eyebrow">المشروعات</span><h1>دورة مشروع قابلة للمتابعة من البداية إلى التسليم</h1><p>تنظيم المعاينة والمقايسة والاعتماد والتنفيذ والمستندات والتسليم داخل مسار واحد.</p></div></section>
-<section class="section-space"><div class="container"><div class="timeline-grid">
-<article><strong>01</strong><h2>استلام الطلب</h2><p>تسجيل العميل والموقع ونوع المشروع والاحتياج الأساسي.</p></article>
-<article><strong>02</strong><h2>المعاينة</h2><p>رفع القياسات والصور والملاحظات والقيود التشغيلية.</p></article>
-<article><strong>03</strong><h2>المقايسة</h2><p>تفكيك البنود وتسعيرها وتحديد المدة ونطاق التنفيذ.</p></article>
-<article><strong>04</strong><h2>التنفيذ</h2><p>متابعة الأعمال والمواد والفرق ونسب الإنجاز.</p></article>
-<article><strong>05</strong><h2>الاستلام</h2><p>إغلاق الملاحظات وتوثيق الحالة النهائية والمستندات.</p></article>
-<article><strong>06</strong><h2>الصيانة</h2><p>ربط الأصل المنفذ بخطة صيانة وطلبات مستقبلية.</p></article>
-</div></div></section>
-<section class="cta-section"><div class="container text-center"><h2>ابدأ مشروعك ضمن دورة واضحة</h2><a class="btn btn-brand btn-lg" href="/request-quote">إرسال بيانات المشروع</a></div></section>
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(/assets/webapp/frontend/img/projects/projects036.jpg);">
+      <div class="container position-relative">
+        <h1>مشاريعنا</h1>
+        <p>نقدم في شركة العزب أفضل حلول التشطيبات وتنفيذ المشاريع بأعلى جودة ومعايير احترافية.</p>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="/">الرئيسية</a></li>
+            <li class="current">مشاريعنا</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <!-- Project 1: Abu Auf -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-card">
+              <div class="project-image">
+                <img src="/assets/webapp/frontend/img/projects/abuauf001.jpg" alt="Abu Auf" class="img-fluid">
+                <div class="project-overlay">
+                  <div class="project-status completed">مكتمل</div>
+                  <div class="project-actions">
+                    <a href="/assets/webapp/frontend/img/projects/abuauf001.jpg" class="btn-project glightbox" data-gallery="abuauf-gallery" title="سلسلة محلات أبوعوف"><i class="bi bi-zoom-in"></i> عرض الصورة</a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-category">تجاري</div>
+                <h4 class="project-title">سلسلة محلات أبو عوف</h4>
+                <p class="project-description">تنفيذ وتطوير الهوية البصرية والتشطيبات الداخلية لفروع سلسلة أبو عوف بأحدث التصميمات.</p>
+                <div class="project-meta">
+                  <span class="location"><i class="bi bi-geo-alt"></i> فروع متعددة</span>
+                </div>
+              </div>
+            </div>
+            <!-- Hidden Gallery for Abu Auf -->
+            <a href="/assets/webapp/frontend/img/projects/abuauf002.jpg" class="glightbox d-none" data-gallery="abuauf-gallery"></a>
+            <a href="/assets/webapp/frontend/img/projects/abuauf003.jpg" class="glightbox d-none" data-gallery="abuauf-gallery"></a>
+            <a href="/assets/webapp/frontend/img/projects/abuauf004.jpg" class="glightbox d-none" data-gallery="abuauf-gallery"></a>
+          </div><!-- End Project Item -->
+
+          <!-- Project 2: Zayed 2000 Villa -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-card">
+              <div class="project-image">
+                <img src="/assets/webapp/frontend/img/projects/projects001.jpg" alt="Zayed 2000 Villa" class="img-fluid">
+                <div class="project-overlay">
+                  <div class="project-status completed">مكتمل</div>
+                  <div class="project-actions">
+                    <a href="/assets/webapp/frontend/img/projects/projects001.jpg" class="btn-project glightbox" data-gallery="zayed-gallery" title="فيلا زايد 2000"><i class="bi bi-zoom-in"></i> عرض الصورة</a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-category">سكني فاخر</div>
+                <h4 class="project-title">مشروع فيلا زايد 2000</h4>
+                <p class="project-description">تشطيب وتجهيز فيلا زايد 2000 بتصميمات عصرية راقية تناسب الذوق الرفيع.</p>
+                <div class="project-meta">
+                  <span class="location"><i class="bi bi-geo-alt"></i> الشيخ زايد</span>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Project Item -->
+
+          <!-- Project 3: Al Andalus Apartments -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-card">
+              <div class="project-image">
+                <img src="/assets/webapp/frontend/img/projects/projects005.jpg" alt="Al Andalus Apartments" class="img-fluid">
+                <div class="project-overlay">
+                  <div class="project-status in-progress">قيد التنفيذ</div>
+                  <div class="project-actions">
+                    <a href="/assets/webapp/frontend/img/projects/projects005.jpg" class="btn-project glightbox" data-gallery="andalus-gallery" title="شقق الأندلس"><i class="bi bi-zoom-in"></i> عرض الصورة</a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-category">سكني</div>
+                <h4 class="project-title">شقق الأندلس</h4>
+                <p class="project-description">مشروع تشطيب متكامل لعدد من الوحدات السكنية في التجمع الخامس بمنطقة الأندلس.</p>
+                <div class="project-meta">
+                  <span class="location"><i class="bi bi-geo-alt"></i> التجمع الخامس</span>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Project Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Projects Section -->
 {% endblock %}

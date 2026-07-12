@@ -1,0 +1,53 @@
+﻿{% extends "webapp/templates/webapp_base.html" %}
+
+{% block content %}
+
+
+
+  <section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <span class="badge" data-i18n="luxury.badge"></span>
+      <h1 data-i18n="luxury.title"></h1>
+      <p class="lead" data-i18n="luxury.subtitle"></p>
+      <div class="cta">
+        <a class="btn primary" href="/quote.html" data-i18n="cta.requestQuote"></a>
+        <a class="btn" href="/projects.html" data-i18n="cta.viewProjects"></a>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><b data-i18n="luxury.kpis.years"></b><div data-i18n="luxury.kpis.yearsLabel"></div></div>
+        <div class="kpi"><b data-i18n="luxury.kpis.projects"></b><div data-i18n="luxury.kpis.projectsLabel"></div></div>
+        <div class="kpi"><b data-i18n="luxury.kpis.satisfaction"></b><div data-i18n="luxury.kpis.satisfactionLabel"></div></div>
+      </div>
+    </div>
+    <div class="lead-img">16:10 Placeholder — Add hero image / video here</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container details">
+    <div class="card">
+      <span class="tag" data-i18n="luxury.sections.materials.tag"></span>
+      <h3 data-i18n="luxury.sections.materials.title"></h3>
+      <ul class="feature-list">
+        <li><svg width="20" height="20"><circle cx="10" cy="10" r="6" fill="var(--brand-yellow)"/></svg><span data-i18n="luxury.sections.materials.items.0"></span></li>
+        <li><svg width="20" height="20"><circle cx="10" cy="10" r="6" fill="var(--brand-yellow)"/></svg><span data-i18n="luxury.sections.materials.items.1"></span></li>
+        <li><svg width="20" height="20"><circle cx="10" cy="10" r="6" fill="var(--brand-yellow)"/></svg><span data-i18n="luxury.sections.materials.items.2"></span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="tag" data-i18n="luxury.sections.execution.tag"></span>
+      <h3 data-i18n="luxury.sections.execution.title"></h3>
+      <p data-i18n="luxury.sections.execution.text"></p>
+    </div>
+  </div>
+</section>
+
+
+  
+
+  
+  
+    
+{% endblock %}
+

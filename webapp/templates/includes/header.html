@@ -1,43 +1,34 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top site-navbar" aria-label="التنقل الرئيسي">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="/" aria-label="شركة العزب - الرئيسية">
-      <img src="/assets/webapp/images/logo/logo.png" alt="شعار شركة العزب" width="48" height="48">
-      <span>العزب</span>
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div class="container-fluid container-xl position-relative d-flex align-items-center">
+    <a href="/" class="logo d-flex align-items-center me-auto" aria-label="Alazab">
+      <img src="https://al-azab.co/w.png" alt="Alazab logo" class="logo-img" />
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
-            aria-controls="mainNavbar" aria-expanded="false" aria-label="فتح قائمة التنقل">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="mainNavbar">
-      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-        <li class="nav-item"><a class="nav-link" href="/">الرئيسية</a></li>
-        <li class="nav-item"><a class="nav-link" href="/about">من نحن</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            الخدمات
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            {% for service in services %}
-            <li>
-              <a class="dropdown-item" href="/{{ service.route }}">
-                {% if service.icon %}<i class="bi {{ service.icon }} ms-2"></i>{% endif %}
-                {{ service.service_name }}
-              </a>
-            </li>
-            {% endfor %}
-            {% if services %}<li><hr class="dropdown-divider"></li>{% endif %}
-            <li><a class="dropdown-item fw-semibold" href="/services">جميع الخدمات</a></li>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="/" data-i18n="nav.home">Home</a></li>
+        <li><a href="/about" data-i18n="nav.about">About</a></li>
+        <li class="dropdown">
+          <a href="/services"><span data-i18n="nav.services">Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="/luxury-finishing" data-i18n="nav.luxuryFinishing">Luxury Finishing</a></li>
+            <li><a href="/brand-identity" data-i18n="nav.brandIdentity">Brand Identity</a></li>
+            <li><a href="/general-supplies" data-i18n="nav.supplies">General Supplies</a></li>
+            <li><a href="/maintenance" data-i18n="nav.maintenance">Maintenance</a></li>
           </ul>
         </li>
-        <li class="nav-item"><a class="nav-link" href="/projects">المشروعات</a></li>
-        <li class="nav-item"><a class="nav-link" href="/blog">المدونة</a></li>
-        <li class="nav-item"><a class="nav-link" href="/contact">تواصل معنا</a></li>
-        <li class="nav-item ms-lg-2">
-          <a class="btn btn-brand btn-sm px-3" href="/request-quote">اطلب عرض سعر</a>
-        </li>
+        <li><a href="/projects" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="/clients" data-i18n="nav.clients">Clients</a></li>
+        <li><a href="/contact" data-i18n="nav.contact">Contact</a></li>
+        <li><a href="/legal" data-i18n="nav.legal">Legal</a></li>
       </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
+
+    <div class="d-flex align-items-center gap-2">
+      <button class="btn btn-sm btn-outline-secondary" data-lang="ar">العربية</button>
+      <button class="btn btn-sm btn-outline-secondary" data-lang="en">English</button>
+      <a class="btn-getstarted d-none d-sm-block" href="/quote" data-i18n="cta.requestQuote">Request Quote</a>
     </div>
   </div>
-</nav>
+</header>

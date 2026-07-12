@@ -1,0 +1,75 @@
+﻿{% extends "webapp/templates/webapp_base.html" %}
+
+{% block content %}
+
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(/assets/webapp/frontend/img/construction/showcase-1.webp);">
+      <div class="container position-relative">
+        <h1 data-i18n="legal.title">Legal & Compliance</h1>
+        <p data-i18n="legal.lead">Governance, licensing, and compliance documentation for Alazab Group.</p>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li class="current" data-i18n="nav.legal">Legal</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2 data-i18n="legal.complianceTitle">Compliance Overview</h2>
+        <p data-i18n="legal.complianceLead">We operate under defined regulatory requirements with traceable documentation.</p>
+      </div>
+      <div class="container" data-aos="fade-up">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title" data-i18n="legal.points.registration.title">Commercial Registration</h5>
+                <p class="card-text" data-i18n="legal.points.registration.text">Verified corporate registration and business licensing aligned with local law.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title" data-i18n="legal.points.tax.title">Tax & Financial Compliance</h5>
+                <p class="card-text" data-i18n="legal.points.tax.text">Tax identification, invoicing controls, and periodic compliance reporting.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title" data-i18n="legal.points.rights.title">Rights & Ownership</h5>
+                <p class="card-text" data-i18n="legal.points.rights.text">Protection of intellectual property, project rights, and contractual obligations.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title" data-i18n="legal.points.safety.title">Safety & Quality</h5>
+                <p class="card-text" data-i18n="legal.points.safety.text">Documented safety procedures, QA processes, and supplier compliance audits.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2 data-i18n="legal.docsTitle">Document Center</h2>
+        <p data-i18n="legal.docsLead">Official documents for registry, taxation, and rights.</p>
+      </div>
+      <div class="container" data-aos="fade-up">
+        <div class="d-flex flex-column flex-md-row gap-3 align-items-start">
+          <a class="btn btn-primary" href="https://al-azab.co/docs/" target="_blank" rel="noreferrer" data-i18n="legal.docsCta">Open Documentation Portal</a>
+          <p class="mb-0" data-i18n="legal.docsNote">For additional compliance requests, contact our legal team via the contact form.</p>
+        </div>
+      </div>
+    </section>
+  
+{% endblock %}
+

@@ -1,0 +1,60 @@
+:root{
+  --brand-yellow:#ffb900;
+  --brand-dark:#020557;
+  --brand-ink:#111111;
+  --brand-accent:#ffb900;
+  --text:#fafafa;
+  --muted:#d7d7d7;
+  --bg:#020557;
+  --card:#10154f;
+  --border:#1e2466;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial,'Apple Color Emoji','Segoe UI Emoji'}
+a{color:var(--brand-accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1200px;margin-inline:auto;padding:clamp(12px,2vw,24px)}
+.site-header{position:sticky;top:0;background:rgba(10,10,63,.92);backdrop-filter:saturate(140%) blur(5px);border-bottom:1px solid var(--border);z-index:1000}
+.navbar{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
+.brand .mark{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--brand-yellow);color:#000;font-weight:900}
+.navlinks{display:flex;gap:18px;flex-wrap:wrap}
+.navlinks a{opacity:.9}
+.navlinks a[aria-current="page"]{color:#fff}
+.lang-switch{display:flex;align-items:center;gap:8px}
+.lang-switch button{all:unset;cursor:pointer;display:grid;place-items:center;width:40px;height:40px;border-radius:999px;border:1px solid var(--border);background:#0b0e42}
+.lang-switch button.active{outline:2px solid var(--brand-yellow)}
+.hero{position:relative;isolation:isolate;background:linear-gradient(160deg,#0a0a3f, #0f1240 55%, #121540);border-bottom:1px solid var(--border)}
+.hero-inner{display:grid;grid-template-columns:1.2fr 0.8fr;gap:24px;align-items:center}
+@media (max-width: 900px){.hero-inner{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(28px,4vw,48px);line-height:1.15;margin:.2em 0;color:#fff}
+.hero p.lead{font-size:clamp(15px,2vw,18px);color:var(--muted);max-width:65ch}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#0d1148;border:1px solid var(--border);padding:8px 12px;border-radius:999px;font-size:13px;color:#c6d0e1}
+.cta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid var(--border);background:#0e134a;color:#fff}
+.btn.primary{background:var(--brand-yellow);color:#111;border-color:#d4a61c;font-weight:700}
+.btn:hover{transform:translateY(-1px)}
+.section{padding:clamp(24px,4vw,56px) 0;border-bottom:1px solid var(--border);background:linear-gradient(180deg,transparent,#0a0a3f 60%,#0a0a3f)}
+.grid{display:grid;gap:18px}
+.grid.cards{grid-template-columns:repeat(12,1fr)}
+@media (max-width:720px){.grid.cards{grid-template-columns:1fr}}
+.card{grid-column:span 6;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px}
+.card h3{margin:.2em 0 .4em 0;font-size:clamp(18px,2.6vw,22px);color:#fff}
+.card p{color:#d6deea}
+.card .tag{display:inline-block;background:#0b0e42;border:1px solid var(--border);padding:6px 10px;border-radius:999px;font-size:12px;color:#cbd6e4;margin-bottom:8px}
+.details{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media (max-width:900px){.details{grid-template-columns:1fr}}
+.kpis{display:flex;gap:18px;flex-wrap:wrap}
+.kpi{background:#0b0e42;border:1px solid var(--border);border-radius:12px;padding:10px 14px}
+.kpi b{color:#fff}
+.feature-list{display:grid;gap:8px}
+.feature-list li{display:flex;gap:10px;align-items:flex-start}
+.feature-list svg{min-width:20px;margin-top:2px}
+.lead-img{aspect-ratio:16/10;border-radius:14px;border:1px dashed var(--border);display:grid;place-items:center;color:#9fb2d5}
+footer{background:#0a0a3f;color:#cbd6e4;border-top:1px solid var(--border)}
+footer .bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 0}
+footer .bottom a{color:var(--brand-yellow)}
+/* RTL helpers */
+[dir="rtl"] .navlinks{flex-direction:row-reverse}
+[dir="rtl"] .cta{flex-direction:row-reverse}
+[dir="rtl"] .feature-list li{flex-direction:row-reverse}

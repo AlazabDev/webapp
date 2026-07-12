@@ -1,6 +1,5 @@
 /**
-* Secure Form Validation Simulation
-* Replaces the old PHP-dependent script to prevent vulnerabilities
+* Frappe API Form Submission handler
 */
 (function () {
   "use strict";
@@ -12,6 +11,12 @@
       event.preventDefault();
 
       let thisForm = this;
+      let action = thisForm.getAttribute('action');
+
+      if (!action) {
+        displayError(thisForm, 'The form action property is not set!');
+        return;
+      }
 
       let loading = thisForm.querySelector('.loading');
       let errorMessage = thisForm.querySelector('.error-message');
@@ -21,14 +26,49 @@
       if (errorMessage) errorMessage.classList.remove('d-block');
       if (sentMessage) sentMessage.classList.remove('d-block');
 
-      // Simulate network request securely without making external calls
-      setTimeout(() => {
-        if (loading) loading.classList.remove('d-block');
-        if (sentMessage) sentMessage.classList.add('d-block');
-        thisForm.reset();
-      }, 1500);
+      let formData = new FormData(thisForm);
+      
+      // Determine Frappe API endpoint from action attribute
+      let apiUrl = '/api/method/' + action;
 
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'X-Frappe-CSRF-Token': frappe.csrf_token || ''
+        },
+        body: formData
+      })
+      .then(response => {
+        if(response.ok) {
+          return response.json();
+        } else {
+          throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
+        }
+      })
+      .then(data => {
+        if (loading) loading.classList.remove('d-block');
+        if (data.message && data.message.message === 'success' || data.message === 'success') {
+          if (sentMessage) sentMessage.classList.add('d-block');
+          thisForm.reset(); 
+        } else {
+          throw new Error(data.message || 'Form submission failed.');
+        }
+      })
+      .catch((error) => {
+        displayError(thisForm, error);
+      });
     });
   });
+
+  function displayError(thisForm, error) {
+    let loading = thisForm.querySelector('.loading');
+    let errorMessage = thisForm.querySelector('.error-message');
+    if (loading) loading.classList.remove('d-block');
+    if (errorMessage) {
+      errorMessage.innerHTML = "حدث خطأ أثناء الإرسال. يرجى المحاولة لاحقاً.";
+      errorMessage.classList.add('d-block');
+    }
+    console.error("Form Error: ", error);
+  }
 
 })();

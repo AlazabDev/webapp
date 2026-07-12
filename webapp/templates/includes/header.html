@@ -6,29 +6,30 @@
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="/" data-i18n="nav.home">Home</a></li>
-        <li><a href="/about" data-i18n="nav.about">About</a></li>
+        <li><a href="/">{{ _("Home") }}</a></li>
+        <li><a href="/about">{{ _("About") }}</a></li>
         <li class="dropdown">
-          <a href="/services"><span data-i18n="nav.services">Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <a href="/services"><span>{{ _("Services") }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
-            <li><a href="/luxury-finishing" data-i18n="nav.luxuryFinishing">Luxury Finishing</a></li>
-            <li><a href="/brand-identity" data-i18n="nav.brandIdentity">Brand Identity</a></li>
-            <li><a href="/general-supplies" data-i18n="nav.supplies">General Supplies</a></li>
-            <li><a href="/maintenance" data-i18n="nav.maintenance">Maintenance</a></li>
+            <li><a href="/luxury-finishing">{{ _("Luxury Finishing") }}</a></li>
+            <li><a href="/brand-identity">{{ _("Brand Identity") }}</a></li>
+            <li><a href="/general-supplies">{{ _("General Supplies") }}</a></li>
+            <li><a href="/maintenance">{{ _("Maintenance") }}</a></li>
           </ul>
         </li>
-        <li><a href="/projects" data-i18n="nav.projects">Projects</a></li>
-        <li><a href="/clients" data-i18n="nav.clients">Clients</a></li>
-        <li><a href="/contact" data-i18n="nav.contact">Contact</a></li>
-        <li><a href="/legal" data-i18n="nav.legal">Legal</a></li>
+        <li><a href="/projects">{{ _("Projects") }}</a></li>
+        <li><a href="/facilities">{{ _("Facilities") }}</a></li>
+        <li><a href="/clients">{{ _("Clients") }}</a></li>
+        <li><a href="/contact">{{ _("Contact") }}</a></li>
+        <li><a href="/legal">{{ _("Legal") }}</a></li>
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
 
     <div class="d-flex align-items-center gap-2">
-      <button class="btn btn-sm btn-outline-secondary" data-lang="ar">العربية</button>
-      <button class="btn btn-sm btn-outline-secondary" data-lang="en">English</button>
-      <a class="btn-getstarted d-none d-sm-block" href="/quote" data-i18n="cta.requestQuote">Request Quote</a>
+      <button class="btn btn-sm btn-outline-secondary btn-lang" data-lang="ar">العربية</button>
+      <button class="btn btn-sm btn-outline-secondary btn-lang" data-lang="en">English</button>
+      <a class="btn-getstarted d-none d-sm-block" href="/quote">{{ _("Request Quote") }}</a>
     </div>
   </div>
 </header>

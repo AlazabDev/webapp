@@ -1,6 +1,7 @@
 import frappe
-from frappe import _
 from frappe.website.website_generator import WebsiteGenerator
+
+from webapp.setup.services import validate_route
 
 
 class Service(WebsiteGenerator):
@@ -11,7 +12,10 @@ class Service(WebsiteGenerator):
 	)
 
 	def validate(self):
-		route = (self.route or "").strip().strip("/")
-		if not route:
-			frappe.throw(_("Route is required for website services"))
-		self.route = "-".join(route.split())
+		self.route = validate_route(self.route)
+		if self.description:
+			self.description = frappe.utils.sanitize_html(
+				self.description,
+				always_sanitize=True,
+				disallowed_tags=["script", "style", "form", "input", "button", "iframe", "object", "embed"],
+			)

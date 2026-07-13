@@ -1,45 +1,141 @@
 {% extends "webapp/templates/webapp_base.html" %}
-{% block title %}طلب عرض سعر | شركة العزب{% endblock %}
+{% block title %}{{ _("Request a Quote") }} | {{ _("Alazab") }}{% endblock %}
+{% block description %}{{ _("Submit a project or service request to Alazab and continue the conversation through WhatsApp.") }}{% endblock %}
+
 {% block content %}
-<section class="page-hero"><div class="container"><span class="eyebrow">طلب جديد</span><h1>أرسل بيانات المشروع أو الخدمة</h1><p>يتم تحويل البيانات إلى رسالة واتساب منظمة لبدء المتابعة فورًا.</p></div></section>
-<section class="section-space"><div class="container"><div class="form-card mx-auto">
-<form id="quoteForm" novalidate>
-<div class="row g-3">
-<div class="col-md-6"><label class="form-label" for="customerName">الاسم</label><input class="form-control" id="customerName" required></div>
-<div class="col-md-6"><label class="form-label" for="customerPhone">رقم الهاتف</label><input class="form-control" id="customerPhone" type="tel" required></div>
-<div class="col-md-6"><label class="form-label" for="serviceType">الخدمة</label><select class="form-select" id="serviceType" required><option value="">اختر الخدمة</option>{% for service in services %}<option value="{{ service.service_name }}" data-name="{{ service.name }}">{{ service.service_name }}</option>{% endfor %}<option value="طلب آخر">طلب آخر</option></select></div>
-<div class="col-md-6"><label class="form-label" for="projectLocation">الموقع</label><input class="form-control" id="projectLocation" required></div>
-<div class="col-12"><label class="form-label" for="requestDetails">تفاصيل الطلب</label><textarea class="form-control" id="requestDetails" rows="5" required></textarea></div>
-<div class="col-12"><button class="btn btn-brand btn-lg w-100" type="submit"><i class="bi bi-whatsapp ms-2"></i>إرسال عبر واتساب</button></div>
-</div>
-</form>
-</div></div></section>
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">{{ _("New Request") }}</span>
+    <h1>{{ _("Send the project or service details") }}</h1>
+    <p>{{ _("The request is registered in the company system before the WhatsApp conversation starts.") }}</p>
+  </div>
+</section>
+
+<section class="section-space">
+  <div class="container">
+    <div class="form-card mx-auto">
+      <form id="quoteForm" novalidate>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label" for="customerName">{{ _("Name") }}</label>
+            <input class="form-control" id="customerName" name="name" maxlength="140" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="customerPhone">{{ _("Phone") }}</label>
+            <input class="form-control" id="customerPhone" name="phone" type="tel" maxlength="30" inputmode="tel" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="customerEmail">{{ _("Email") }} <span class="text-muted">({{ _("Optional") }})</span></label>
+            <input class="form-control" id="customerEmail" name="email" type="email" maxlength="140">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="serviceType">{{ _("Service") }}</label>
+            <select class="form-select" id="serviceType" name="service" required>
+              <option value="">{{ _("Select a service") }}</option>
+              {% for service in services %}
+              <option value="{{ service.name }}" data-name="{{ service.name }}" data-label="{{ service.service_name | e }}">{{ service.service_name }}</option>
+              {% endfor %}
+              <option value="__other__" data-label="{{ _('Other request') }}">{{ _("Other request") }}</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label class="form-label" for="projectLocation">{{ _("Project Location") }}</label>
+            <input class="form-control" id="projectLocation" name="location" maxlength="300" required>
+          </div>
+          <div class="col-12">
+            <label class="form-label" for="requestDetails">{{ _("Request Details") }}</label>
+            <textarea class="form-control" id="requestDetails" name="message" rows="5" maxlength="5000" required></textarea>
+          </div>
+          <div style="position:absolute;left:-10000px" aria-hidden="true">
+            <label for="quoteWebsite">Website</label>
+            <input type="text" name="website" id="quoteWebsite" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="col-12">
+            <div id="quoteStatus" class="alert d-none" role="status" aria-live="polite"></div>
+          </div>
+          <div class="col-12">
+            <button id="quoteSubmit" class="btn btn-brand btn-lg w-100" type="submit">
+              <i class="bi bi-whatsapp ms-2"></i>{{ _("Register and Continue on WhatsApp") }}
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
 {% endblock %}
+
 {% block scripts %}
 <script>
 (() => {
   const form = document.getElementById('quoteForm');
   const serviceSelect = document.getElementById('serviceType');
+  const submitButton = document.getElementById('quoteSubmit');
+  const statusBox = document.getElementById('quoteStatus');
   const requestedService = new URLSearchParams(window.location.search).get('service');
+
   if (requestedService) {
     const option = Array.from(serviceSelect.options).find(item => item.dataset.name === requestedService);
     if (option) option.selected = true;
   }
-  form.addEventListener('submit', event => {
+
+  const showStatus = (message, type) => {
+    statusBox.className = `alert alert-${type}`;
+    statusBox.textContent = message;
+  };
+
+  form.addEventListener('submit', async event => {
     event.preventDefault();
     if (!form.checkValidity()) {
       form.classList.add('was-validated');
       return;
     }
-    const lines = [
-      'طلب جديد من موقع شركة العزب',
-      `الاسم: ${document.getElementById('customerName').value.trim()}`,
-      `الهاتف: ${document.getElementById('customerPhone').value.trim()}`,
-      `الخدمة: ${serviceSelect.value}`,
-      `الموقع: ${document.getElementById('projectLocation').value.trim()}`,
-      `التفاصيل: ${document.getElementById('requestDetails').value.trim()}`,
-    ];
-    window.open(`https://wa.me/201004006620?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener');
+
+    const selectedOption = serviceSelect.selectedOptions[0];
+    const serviceLabel = selectedOption?.dataset.label || selectedOption?.textContent?.trim() || '{{ _("Other request") }}';
+    const requestData = new URLSearchParams(new FormData(form));
+    requestData.set('service_name', serviceLabel);
+    if (serviceSelect.value === '__other__') requestData.set('service', '');
+
+    const whatsappWindow = window.open('about:blank', '_blank');
+    if (whatsappWindow) whatsappWindow.opener = null;
+    submitButton.disabled = true;
+    showStatus('{{ _("Registering your request...") }}', 'info');
+
+    try {
+      const response = await fetch('/api/method/webapp.api.submit_quote_form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+        body: requestData
+      });
+      const payload = await response.json();
+      if (!response.ok || payload.exc || !payload.message?.request_id) throw new Error('Quote request failed');
+
+      const requestId = payload.message.request_id;
+      const lines = [
+        '{{ _("New request from Alazab website") }}',
+        `{{ _("Request ID") }}: ${requestId}`,
+        `{{ _("Name") }}: ${document.getElementById('customerName').value.trim()}`,
+        `{{ _("Phone") }}: ${document.getElementById('customerPhone').value.trim()}`,
+        `{{ _("Service") }}: ${serviceLabel}`,
+        `{{ _("Location") }}: ${document.getElementById('projectLocation').value.trim()}`,
+        `{{ _("Details") }}: ${document.getElementById('requestDetails').value.trim()}`
+      ];
+      const whatsappUrl = `https://wa.me/201004006620?text=${encodeURIComponent(lines.join('\n'))}`;
+
+      showStatus(`{{ _("Request registered successfully") }}: ${requestId}`, 'success');
+      form.reset();
+      form.classList.remove('was-validated');
+
+      if (whatsappWindow) whatsappWindow.location.replace(whatsappUrl);
+      else window.location.href = whatsappUrl;
+    } catch (error) {
+      console.error(error);
+      if (whatsappWindow) whatsappWindow.close();
+      showStatus('{{ _("The request could not be registered. Please try again.") }}', 'danger');
+    } finally {
+      submitButton.disabled = false;
+    }
   });
 })();
 </script>

@@ -29,7 +29,7 @@
 ## تثبيت بيئة التطوير
 
 ```bash
-bench get-app webapp https://github.com/AlazabDev/webapp.git --branch develop
+bench get-app webapp https://github.com/AlazabDev/webapp.git
 ```
 
 ```bash

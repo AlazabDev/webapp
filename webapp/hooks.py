@@ -15,7 +15,7 @@ home_page = "site"
 add_to_apps_screen = [
 	{
 		"name": "webapp",
-		"logo": "/assets/webapp/images/logo/logo.png",
+		"logo": "/assets/webapp/images/logo_g.jpg",
 		"title": "Alazab Website",
 		"route": "/site",
 		"has_permission": "frappe.permissions.check_app_permission",

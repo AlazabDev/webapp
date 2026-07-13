@@ -2,7 +2,37 @@
 
 All notable changes to the Alazab Website application are documented here.
 
-## [16.0.0] - Unreleased
+## [16.0.1] - 2026-07-13
+
+### Added
+
+- Bench-native `before_install` validation for service seed data and the facility CSV source.
+- Bench-native `after_install` seeding after standard DocType synchronization.
+- Shared, idempotent service and facility importers used by fresh installs and migrations.
+- Frappe v16 dependency contract in `pyproject.toml`.
+- Tests covering the complete Bench installation contract and automatic DocType creation.
+
+### Changed
+
+- Operational service data is preserved under `webapp/setup/data/services.json` and inserted only when missing.
+- Facility migrations validate the complete CSV before writing and no longer overwrite existing records.
+- Website context and public APIs tolerate partial installation states without querying missing tables.
+- Application and desktop icons use a valid non-empty local asset.
+- Production instructions now use Bench commands for installation and updates.
+
+### Security
+
+- Service rich text is sanitized before public rendering.
+- Service routes are normalized and protected from reserved Frappe routes.
+- Quote requests accept only published services.
+
+### Fixed
+
+- Prevented Frappe fixture synchronization from overwriting operational service records.
+- Ensured fresh `install-app` executions populate facilities even though migration patches are marked completed on first installation.
+- Removed the fragile duplicate facility-import implementation from the migration patch.
+
+## [16.0.0] - 2026-07-13
 
 ### Added
 
@@ -19,7 +49,6 @@ All notable changes to the Alazab Website application are documented here.
 - Contact messages are stored as standard Frappe `Communication` records.
 - Quote requests are registered before the WhatsApp handoff.
 - Google Maps API key is loaded from site configuration instead of source code.
-- Operational `Service` records are no longer exported as fixtures.
 - Header quote action now points to `/request-quote`.
 
 ### Fixed

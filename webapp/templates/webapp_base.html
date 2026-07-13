@@ -4,6 +4,27 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>{% block title %}{{ _("شركة العزب") }}{% endblock %}</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="{% block description %}{{ _('شركة العزب للمقاولات العامة والتوريدات المتكاملة وإدارة المرافق.') }}{% endblock %}">
+  <meta name="keywords" content="{% block keywords %}{{ _('العزب, مقاولات, تشطيبات, توريدات, إدارة مرافق, Al Azab, Contracting, Facility Management') }}{% endblock %}">
+  <meta name="author" content="Al Azab Company">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ frappe.utils.get_url() }}{{ frappe.request.path }}">
+  <meta property="og:title" content="{% block og_title %}{{ self.title() }}{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}{{ self.description() }}{% endblock %}">
+  <meta property="og:image" content="{% block og_image %}https://al-azab.co/w.png{% endblock %}">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{ frappe.utils.get_url() }}{{ frappe.request.path }}">
+  <meta property="twitter:title" content="{% block twitter_title %}{{ self.title() }}{% endblock %}">
+  <meta property="twitter:description" content="{% block twitter_description %}{{ self.description() }}{% endblock %}">
+  <meta property="twitter:image" content="{% block twitter_image %}https://al-azab.co/w.png{% endblock %}">
+
   {% block meta %}{% endblock %}
 
   <!-- Favicons -->

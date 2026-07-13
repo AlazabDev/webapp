@@ -62,7 +62,7 @@ jobs:
           mariadb --host 127.0.0.1 --port 3306 -u root -proot -e "SET GLOBAL character_set_server = 'utf8mb4'"
           mariadb --host 127.0.0.1 --port 3306 -u root -proot -e "SET GLOBAL collation_server = 'utf8mb4_unicode_ci'"
 
-      - name: Install application
+      - name: Install and migrate application
         working-directory: /home/runner/frappe-bench
         env:
           CI: "Yes"
@@ -71,7 +71,14 @@ jobs:
           bench setup requirements --dev
           bench new-site --db-root-password root --admin-password admin test_site
           bench --site test_site install-app webapp
+          bench --site test_site migrate
           bench build --app webapp
+
+      - name: Verify release metadata and Python syntax
+        working-directory: /home/runner/frappe-bench/apps/webapp
+        run: |
+          python -m compileall webapp
+          python -c "import webapp; assert webapp.__version__ == '16.0.0'"
 
       - name: Run Ruff
         working-directory: /home/runner/frappe-bench/apps/webapp

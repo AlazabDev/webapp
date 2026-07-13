@@ -1,188 +1,214 @@
-{% extends "templates/webapp_base.html" %}
+{% extends "webapp/templates/webapp_base.html" %}
 
-{% block title %}{{ _("Our Facilities") }} | Al Azab{% endblock %}
+{% block title %}{{ _("Our Facilities") }} | {{ _("Alazab") }}{% endblock %}
 
 {% block content %}
-<main class="main">
+<div class="page-title dark-background" data-aos="fade" style="background-image: url('/assets/webapp/frontend/img/page-title-bg.jpg');">
+  <div class="container position-relative">
+    <h1>{{ _("Our Facilities") }}</h1>
+    <p>{{ _("Explore Alazab operational coverage through the published branch and facility network.") }}</p>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="/">{{ _("Home") }}</a></li>
+        <li class="current">{{ _("Our Facilities") }}</li>
+      </ol>
+    </nav>
+  </div>
+</div>
 
-  <!-- Page Title -->
-  <div class="page-title dark-background" data-aos="fade" style="background-image: url('/assets/webapp/frontend/img/page-title-bg.jpg');">
-    <div class="container position-relative">
-      <h1>{{ _("Our Facilities") }}</h1>
-      <p>{{ _("Explore the widespread reach and operational excellence of Al Azab through our network of over 300 facilities and branches.") }}</p>
-      <nav class="breadcrumbs">
-        <ol>
-          <li><a href="/">{{ _("Home") }}</a></li>
-          <li class="current">{{ _("Our Facilities") }}</li>
-        </ol>
-      </nav>
-    </div>
-  </div><!-- End Page Title -->
-
-  <!-- Facilities Section -->
-  <section id="facilities" class="facilities section">
-    <div class="container" data-aos="fade-up">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="filters-sidebar p-4 bg-light rounded shadow-sm">
-            <h4 class="mb-4" style="color: var(--heading-color); font-weight: bold;">{{ _("Filter Branches") }}</h4>
-            <div class="mb-3">
-              <label class="form-label fw-bold">{{ _("Facility Type") }}</label>
-              <select id="type-filter" class="form-select border-0 shadow-sm">
-                <option value="all">{{ _("All Types") }}</option>
-                <option value="فرع أبو عوف">{{ _("Abu Auf Branch") }}</option>
-                <option value="منفذ بيع">{{ _("Point of Sale") }}</option>
-              </select>
-            </div>
-            <div class="mb-4">
-              <label class="form-label fw-bold">{{ _("Search by Name") }}</label>
-              <input type="text" id="search-filter" class="form-control border-0 shadow-sm" placeholder="{{ _('e.g. التجمع الخامس') }}">
-            </div>
-            <hr>
-            <div class="stats mt-4">
-              <div class="stat-item d-flex align-items-center mb-3">
-                <div class="icon bg-warning text-dark p-3 rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
-                  <i class="bi bi-geo-alt-fill fs-4"></i>
-                </div>
-                <div>
-                  <h3 id="total-count" class="mb-0 fw-bold">0</h3>
-                  <p class="text-muted mb-0 small">{{ _("Total Facilities") }}</p>
-                </div>
+<section id="facilities" class="facilities section">
+  <div class="container" data-aos="fade-up">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="filters-sidebar p-4 bg-light rounded shadow-sm">
+          <h4 class="mb-4">{{ _("Filter Branches") }}</h4>
+          <div class="mb-3">
+            <label class="form-label fw-bold" for="type-filter">{{ _("Facility Type") }}</label>
+            <select id="type-filter" class="form-select border-0 shadow-sm">
+              <option value="all">{{ _("All Types") }}</option>
+              <option value="فرع أبو عوف">{{ _("Abu Auf Branch") }}</option>
+              <option value="منفذ بيع">{{ _("Point of Sale") }}</option>
+            </select>
+          </div>
+          <div class="mb-4">
+            <label class="form-label fw-bold" for="search-filter">{{ _("Search by Name") }}</label>
+            <input type="search" id="search-filter" class="form-control border-0 shadow-sm" placeholder="{{ _('Branch name or address') }}">
+          </div>
+          <hr>
+          <div class="stats mt-4">
+            <div class="stat-item d-flex align-items-center mb-3">
+              <div class="icon bg-warning text-dark p-3 rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                <i class="bi bi-geo-alt-fill fs-4"></i>
+              </div>
+              <div>
+                <h3 id="total-count" class="mb-0 fw-bold">0</h3>
+                <p class="text-muted mb-0 small">{{ _("Published Facilities") }}</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-md-9 mt-4 mt-md-0">
-          <!-- Google Map Container -->
-          <div id="map" style="height: 600px; width: 100%; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"></div>
-        </div>
+      </div>
+      <div class="col-md-9 mt-4 mt-md-0">
+        <div id="map-status" class="alert alert-info d-none" role="status"></div>
+        <div id="map" style="height: 600px; width: 100%; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"></div>
       </div>
     </div>
-  </section>
-</main>
+  </div>
+</section>
 {% endblock %}
 
-{% block script %}
-<!-- Google Maps API -->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnPk1hd_00aABeGbovq-6C0TW0S9sYRts&callback=initMap"></script>
+{% block scripts %}
 <script>
+(() => {
+  const endpoint = '/api/method/webapp.api.get_facilities';
+  const typeFilter = document.getElementById('type-filter');
+  const searchFilter = document.getElementById('search-filter');
+  const totalCount = document.getElementById('total-count');
+  const mapStatus = document.getElementById('map-status');
   let map;
-  let markers = [];
-  let facilities = [];
   let infoWindow;
+  let facilities = [];
+  let markers = [];
 
-  function initMap() {
-    // Center map on Egypt
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: { lat: 26.8206, lng: 30.8025 }, 
-      zoom: 6,
-      mapTypeControl: false,
-      streetViewControl: false,
-    });
-    
-    infoWindow = new google.maps.InfoWindow();
+  const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, character => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    "'": '&#39;',
+    '"': '&quot;'
+  })[character]);
 
-    // Fetch data from Frappe API
-    fetch('/api/method/webapp.webapp.api.get_facilities')
-      .then(response => response.json())
-      .then(data => {
-        if(data.message) {
-          facilities = data.message;
-          document.getElementById('total-count').innerText = facilities.length;
-          renderMarkers(facilities);
-        }
-      })
-      .catch(error => console.error('Error fetching facilities:', error));
-  }
+  const safeMapLink = value => {
+    try {
+      const url = new URL(value);
+      return ['http:', 'https:'].includes(url.protocol) ? url.href : '';
+    } catch (error) {
+      return '';
+    }
+  };
 
-  function renderMarkers(dataToRender) {
-    // Clear existing markers
+  const showStatus = (message, type = 'info') => {
+    mapStatus.className = `alert alert-${type}`;
+    mapStatus.textContent = message;
+  };
+
+  const loadFacilities = async () => {
+    const response = await fetch(endpoint, { headers: { Accept: 'application/json' } });
+    if (!response.ok) throw new Error(`Facilities request failed with ${response.status}`);
+    const payload = await response.json();
+    facilities = Array.isArray(payload.message) ? payload.message : [];
+    totalCount.textContent = facilities.length;
+    return facilities;
+  };
+
+  const getMarkerIcon = facilityType => {
+    if (facilityType === 'فرع أبو عوف') return '/assets/webapp/images/technician-branch-icons/icon-abuauf.png';
+    if (facilityType === 'منفذ بيع') return '/assets/webapp/images/technician-branch-icons/branch-icon.png';
+    return '/assets/webapp/images/technician-branch-icons/default-pin.png';
+  };
+
+  const renderMarkers = rows => {
+    if (!map) return;
     markers.forEach(marker => marker.setMap(null));
     markers = [];
 
-    dataToRender.forEach(facility => {
-      let lat = parseFloat(facility.latitude);
-      let lng = parseFloat(facility.longitude);
+    rows.forEach(facility => {
+      const latitude = Number.parseFloat(facility.latitude);
+      const longitude = Number.parseFloat(facility.longitude);
+      if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) return;
 
-      if(!isNaN(lat) && !isNaN(lng)) {
-        let iconUrl = '/assets/webapp/images/technician-branch-icons/default-pin.png';
-        if (facility.facility_type === 'فرع أبو عوف') {
-          iconUrl = '/assets/webapp/images/technician-branch-icons/icon-abuauf.png';
-        } else if (facility.facility_type === 'منفذ بيع') {
-          iconUrl = '/assets/webapp/images/technician-branch-icons/branch-icon.png';
+      const marker = new google.maps.Marker({
+        position: { lat: latitude, lng: longitude },
+        map,
+        title: facility.facility_name || '',
+        icon: {
+          url: getMarkerIcon(facility.facility_type),
+          scaledSize: new google.maps.Size(40, 40),
+          anchor: new google.maps.Point(20, 40)
         }
+      });
 
-        let marker = new google.maps.Marker({
-          position: { lat: lat, lng: lng },
-          map: map,
-          title: facility.facility_name,
-          icon: {
-            url: iconUrl,
-            scaledSize: new google.maps.Size(40, 40), // ضبط الحجم لتكون متناسقة
-            anchor: new google.maps.Point(20, 40) // ضبط نقطة الارتكاز (أسفل منتصف الأيقونة)
-          }
-        });
+      marker.addListener('click', () => {
+        const mapLink = safeMapLink(facility.map_link);
+        const directions = mapLink
+          ? `<a href="${escapeHtml(mapLink)}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary w-100">{{ _("Get Directions") }} <i class="bi bi-arrow-up-right ms-1"></i></a>`
+          : '';
+        infoWindow.setContent(`
+          <div style="padding:10px;max-width:280px" class="map-infowindow">
+            <h5 style="font-weight:bold;margin-bottom:8px;font-size:16px">${escapeHtml(facility.facility_name)}</h5>
+            <span class="badge bg-warning text-dark mb-3">${escapeHtml(facility.facility_type)}</span>
+            <p style="font-size:13px;color:#555;margin-bottom:12px;line-height:1.5">${escapeHtml(facility.address)}</p>
+            ${directions}
+          </div>
+        `);
+        infoWindow.open(map, marker);
+      });
 
-        marker.addListener('click', () => {
-          let content = `
-            <div style="padding: 10px; max-width: 250px;" class="map-infowindow">
-              <h5 style="color:var(--heading-color); font-weight:bold; margin-bottom: 8px; font-size:16px;">${facility.facility_name}</h5>
-              <span class="badge bg-warning text-dark mb-3">${facility.facility_type}</span>
-              <p style="font-size: 13px; color:#555; margin-bottom:12px; line-height: 1.4;">
-                <i class="bi bi-pin-map-fill text-danger me-1"></i> ${facility.address}
-              </p>
-              ${facility.map_link ? `<a href="${facility.map_link}" target="_blank" class="btn btn-sm btn-primary w-100" style="font-size:12px; border-radius: 4px;">${'{{ _("Get Directions") }}'} <i class="bi bi-arrow-up-right ms-1"></i></a>` : ''}
-            </div>
-          `;
-          infoWindow.setContent(content);
-          infoWindow.open(map, marker);
-        });
-
-        markers.push(marker);
-      }
+      markers.push(marker);
     });
-  }
+  };
 
-  // Filters
-  document.getElementById('type-filter').addEventListener('change', filterFacilities);
-  document.getElementById('search-filter').addEventListener('input', filterFacilities);
-
-  function filterFacilities() {
-    let typeVal = document.getElementById('type-filter').value;
-    let searchVal = document.getElementById('search-filter').value.toLowerCase();
-
-    let filtered = facilities.filter(f => {
-      let matchType = typeVal === 'all' || f.facility_type === typeVal;
-      let matchSearch = searchVal === '' || f.facility_name.toLowerCase().includes(searchVal) || (f.address && f.address.toLowerCase().includes(searchVal));
-      return matchType && matchSearch;
+  const filterFacilities = () => {
+    const typeValue = typeFilter.value;
+    const searchValue = searchFilter.value.trim().toLowerCase();
+    const filtered = facilities.filter(facility => {
+      const matchesType = typeValue === 'all' || facility.facility_type === typeValue;
+      const searchable = `${facility.facility_name || ''} ${facility.address || ''}`.toLowerCase();
+      return matchesType && (!searchValue || searchable.includes(searchValue));
     });
 
-    document.getElementById('total-count').innerText = filtered.length;
+    totalCount.textContent = filtered.length;
     renderMarkers(filtered);
-    
-    // Auto fit bounds
-    if (filtered.length > 0 && filtered.length < facilities.length) {
-      let bounds = new google.maps.LatLngBounds();
-      filtered.forEach(f => {
-        let lat = parseFloat(f.latitude);
-        let lng = parseFloat(f.longitude);
-        if(!isNaN(lat) && !isNaN(lng)) {
-          bounds.extend({lat: lat, lng: lng});
-        }
+
+    if (map && filtered.length > 0 && filtered.length < facilities.length) {
+      const bounds = new google.maps.LatLngBounds();
+      filtered.forEach(facility => {
+        const latitude = Number.parseFloat(facility.latitude);
+        const longitude = Number.parseFloat(facility.longitude);
+        if (Number.isFinite(latitude) && Number.isFinite(longitude)) bounds.extend({ lat: latitude, lng: longitude });
       });
       map.fitBounds(bounds);
-      
-      // Prevent too much zoom if only 1 point
-      let zoomChangeBoundsListener = google.maps.event.addListener(map, 'bounds_changed', function(event) {
-          if (this.getZoom() > 14) {
-              this.setZoom(14);
-          }
-          google.maps.event.removeListener(zoomChangeBoundsListener);
-      });
-    } else if (filtered.length === facilities.length) {
+    } else if (map && filtered.length === facilities.length) {
       map.setCenter({ lat: 26.8206, lng: 30.8025 });
       map.setZoom(6);
     }
-  }
+  };
+
+  typeFilter.addEventListener('change', filterFacilities);
+  searchFilter.addEventListener('input', filterFacilities);
+
+  window.initMap = async () => {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: { lat: 26.8206, lng: 30.8025 },
+      zoom: 6,
+      mapTypeControl: false,
+      streetViewControl: false
+    });
+    infoWindow = new google.maps.InfoWindow();
+
+    try {
+      await loadFacilities();
+      renderMarkers(facilities);
+    } catch (error) {
+      console.error(error);
+      showStatus('{{ _("Facilities could not be loaded. Please try again later.") }}', 'danger');
+    }
+  };
+
+  {% if not google_maps_api_key %}
+  document.addEventListener('DOMContentLoaded', async () => {
+    document.getElementById('map').classList.add('d-none');
+    showStatus('{{ _("Google Maps is not configured for this site. Add google_maps_api_key to site_config.json.") }}', 'warning');
+    try {
+      await loadFacilities();
+    } catch (error) {
+      console.error(error);
+    }
+  });
+  {% endif %}
+})();
 </script>
+{% if google_maps_api_key %}
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_api_key | e }}&callback=initMap" referrerpolicy="strict-origin-when-cross-origin"></script>
+{% endif %}
 {% endblock %}

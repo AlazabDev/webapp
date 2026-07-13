@@ -91,6 +91,8 @@ def submit_quote_form(
 	"""Create a controlled Quote Request record from the public website."""
 	if website:
 		return {"status": "success"}
+	if not frappe.db.table_exists("Quote Request"):
+		frappe.throw(_("Quote requests are temporarily unavailable"), frappe.ValidationError)
 
 	customer_name = _clean_text(name, "Name", 140, required=True)
 	phone = _clean_phone(phone)
@@ -103,7 +105,7 @@ def submit_quote_form(
 		email = validate_email_address(_clean_text(email, "Email", 140), throw=True)
 
 	if service:
-		if not frappe.db.exists("Service", service):
+		if not frappe.db.exists("Service", {"name": service, "published": 1}):
 			frappe.throw(_("The selected service is not available"), frappe.ValidationError)
 		service_name = frappe.db.get_value("Service", service, "service_name") or service_name
 
@@ -136,6 +138,9 @@ def submit_quote_form(
 @rate_limit(limit=120, seconds=60, methods="GET")
 def get_facilities():
 	"""Return only published facilities and public map fields."""
+	if not frappe.db.table_exists("Facility"):
+		return []
+
 	facilities = frappe.get_all(
 		"Facility",
 		filters={"published": 1},

@@ -1,12 +1,24 @@
 # Alazab Website
 
-تطبيق Frappe للموقع الرسمي لشركة العزب، مخصص لخط **Frappe Framework v16**.
+تطبيق الموقع الرسمي لشركة العزب، مجهز للعمل كتطبيق قياسي داخل **Frappe Framework v16** من خلال دورة Bench الأصلية فقط.
 
 ## الفروع
 
-- `develop`: التطوير والتكامل والاختبارات.
-- `version-16`: فرع الإنتاج المستقر المتوافق مع Frappe v16.
-- الإصدارات المثبتة في الإنتاج تُقفل على Tag مثل `v16.0.0`.
+- `develop`: التطوير والتكامل.
+- `version-16`: خط الإصدار المتوافق مع Frappe v16.
+- الإصدارات النهائية تُقفل على Tag مثل `v16.0.1`.
+
+## عقد Bench المعتمد
+
+عند إضافة التطبيق إلى Bench:
+
+1. `bench get-app` يستنسخ المستودع، يثبت حزمة Python داخل بيئة Bench، يثبت تبعيات الواجهة عند وجودها، يسجل التطبيق ويبني الأصول.
+2. `bench --site <site-name> install-app webapp` ينشئ Module Def ويزامن DocTypes القياسية من ملفات JSON.
+3. `before_install` يفحص بيانات الخدمات وملف الفروع كاملًا قبل تعديل Schema الموقع.
+4. `after_install` يعمل بعد إنشاء DocTypes ويضيف الخدمات والفروع الناقصة فقط.
+5. `bench update` يتولى النسخ الاحتياطي والسحب والمتطلبات والبناء والترحيل وإعادة التشغيل ضمن دورة Bench.
+
+لا يحتاج التطبيق إلى تشغيل `pip` أو `npm` أو `yarn` أو سكربت نشر مستقل خارج Bench.
 
 ## الوظائف
 
@@ -15,104 +27,62 @@
 - نموذج تواصل عام يُسجل الطلب داخل `Communication` القياسي في Frappe.
 - نموذج طلب عرض سعر يُنشئ سجلًا في `Quote Request` ثم يفتح محادثة WhatsApp برقم الطلب.
 - خريطة مرافق وفروع مبنية على DocType باسم `Facility` وتعرض السجلات المنشورة فقط.
-- استيراد بيانات الفروع من `webapp/public/data/abuauf_branches_310.csv` أثناء الترحيل.
+- Seed آمن للخدمات لا يعيد الكتابة فوق بيانات Desk.
+- استيراد متحقق منه لبيانات الفروع أثناء التثبيت الجديد والترقيات.
 - تحديد معدل الطلبات والتحقق من البريد والهاتف والحقول العامة.
-- اختبارات سلامة للقوالب والأصول ومسارات API واختبارات تكامل للنماذج والمرافق.
 
-## متطلبات v16
+## المتطلبات
 
+- Frappe Framework `>=16.0.0,<17.0.0`
 - Python `>=3.14,<3.15`
-- Node.js `>=24`
-- Frappe Framework branch `version-16`
+- Node.js `24`
 - MariaDB وRedis وفق متطلبات Frappe v16
 
-## تثبيت بيئة التطوير
+## التثبيت على Bench
+
+نفذ من داخل مجلد Bench:
 
 ```bash
-bench get-app webapp https://github.com/AlazabDev/webapp.git
+bench get-app --branch version-16 webapp https://github.com/AlazabDev/webapp.git
 ```
+
+ثم أضف التطبيق إلى الموقع:
 
 ```bash
 bench --site <site-name> install-app webapp
 ```
 
-```bash
-bench --site <site-name> migrate
-```
+إن نجح الأمر الثاني تكون DocTypes التالية قد أُنشئت تلقائيًا:
+
+- `Service`
+- `Quote Request`
+- `Facility`
+
+كما تكون بيانات Seed الآمنة قد أضيفت دون الكتابة فوق سجلات موجودة.
+
+## تحديث نسخة مثبتة
+
+من داخل مجلد Bench:
 
 ```bash
-bench build --app webapp
+bench update --apps webapp
 ```
 
-```bash
-bench --site <site-name> clear-cache
-```
-
-## تثبيت فرع الإنتاج
-
-```bash
-bench get-app webapp https://github.com/AlazabDev/webapp.git --branch version-16
-```
-
-بعد نشر `v16.0.0` يفضل تثبيت النسخة المقفلة:
-
-```bash
-bench get-app webapp https://github.com/AlazabDev/webapp.git --branch v16.0.0
-```
+هذا هو مسار التحديث المعتمد. لا يتم سحب الفرع أو تثبيت التبعيات أو تشغيل الترحيل بأوامر منفصلة خارج Bench.
 
 ## إعداد Google Maps
-
-مفتاح Google Maps لا يُحفظ داخل المستودع. أضفه إلى إعدادات الموقع:
 
 ```bash
 bench --site <site-name> set-config google_maps_api_key '<GOOGLE_MAPS_API_KEY>'
 ```
 
-ثم نفذ:
-
-```bash
-bench --site <site-name> clear-cache
-```
-
-## ترقية نسخة موجودة
-
-```bash
-cd apps/webapp
-```
-
-```bash
-git fetch origin --tags
-```
-
-```bash
-git switch version-16
-```
-
-```bash
-git pull --ff-only origin version-16
-```
-
-```bash
-cd ../..
-```
-
-```bash
-bench --site <site-name> migrate
-```
-
-```bash
-bench build --app webapp
-```
+ثم:
 
 ```bash
 bench --site <site-name> clear-cache
 ```
 
 ## الفحص والاختبارات
-
-```bash
-ruff check webapp
-```
 
 ```bash
 bench --site <site-name> set-config allow_tests true
@@ -122,30 +92,24 @@ bench --site <site-name> set-config allow_tests true
 bench --site <site-name> run-tests --app webapp
 ```
 
-## البنية النشطة
+## البنية المسؤولة عن التلقائية
 
-- `webapp/www/`: صفحات الموقع العامة.
-- `webapp/templates/webapp_base.html`: القالب الأساسي.
-- `webapp/templates/generators/service.html`: صفحة الخدمة الديناميكية.
-- `webapp/webapp/doctype/service/`: الخدمات المنشورة.
-- `webapp/webapp/doctype/quote_request/`: طلبات عروض الأسعار.
-- `webapp/webapp/doctype/facility/`: المرافق والفروع.
-- `webapp/api.py`: نقاط API العامة المراقبة.
-- `webapp/patches/v16_0/`: ترحيلات إصدار v16.
+- `pyproject.toml`: تعريف حزمة Python وتوافق Frappe v16 الذي يفحصه Bench عند `get-app`.
+- `webapp/hooks.py`: ربط `before_install` و`after_install` ودورة الموقع.
+- `webapp/modules.txt`: تعريف Module الذي ينشئه Bench داخل الموقع.
+- `webapp/webapp/doctype/`: ملفات DocType القياسية التي يزامنها `install-app` تلقائيًا.
+- `webapp/setup/install.py`: دورة التثبيت الجديدة.
+- `webapp/setup/services.py`: فحص وإضافة خدمات Seed دون Overwrite.
+- `webapp/setup/facilities.py`: فحص CSV كاملًا ثم إضافة الفروع الناقصة.
+- `webapp/patches.txt`: ترحيلات المواقع المثبتة سابقًا بعد مزامنة Schema.
+- `webapp/public/`: الأصول التي يبنيها Bench ويعرضها تحت `/assets/webapp/`.
 
-## قواعد البيانات التشغيلية
+## إدارة البيانات
 
-بيانات `Service` و`Quote Request` و`Facility` تُدار من Frappe Desk. لا يتم تصدير الخدمات المنشورة كـFixtures حتى لا يعيد `migrate` الكتابة فوق المحتوى التشغيلي في الإنتاج.
-
-## تجهيز الإصدار
-
-قبل إنشاء Tag جديد:
-
-1. نجاح GitHub Actions على Pull Request من `develop` إلى `version-16`.
-2. تشغيل `migrate` و`build` واختبارات التطبيق على موقع اختبار.
-3. مراجعة `CHANGELOG.md` ورقم `webapp/__init__.py`.
-4. أخذ نسخة احتياطية من موقع الإنتاج.
-5. إنشاء Tag على `version-16` بصيغة `v16.x.x`.
+- `webapp/fixtures/service.json` غير تشغيلي ويحتوي قائمة فارغة حتى لا يعيد Frappe استيراد بيانات الخدمات فوق الإنتاج.
+- النسخة المحفوظة للخدمات موجودة في `webapp/setup/data/services.json`.
+- الخدمات والفروع الموجودة مسبقًا لا يتم تعديلها أو استبدالها أثناء Seed أو Patch.
+- بيانات `Service` و`Quote Request` و`Facility` تُدار بعد التثبيت من Frappe Desk.
 
 ## الترخيص
 

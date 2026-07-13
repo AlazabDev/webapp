@@ -40,11 +40,10 @@
     {
       "fieldname": "description",
       "fieldtype": "Text Editor",
-      "ignore_xss_filter": 1,
       "label": "Description"
     },
     {
-      "description": "Bootstrap Icons class without the bi prefix, for example bi-tools.",
+      "description": "Full Bootstrap Icons class, for example bi-tools.",
       "fieldname": "icon",
       "fieldtype": "Data",
       "label": "Bootstrap Icon"
@@ -90,7 +89,7 @@
   "is_tree": 0,
   "links": [],
   "make_attachments_public": 1,
-  "modified": "2026-07-12 00:00:00.000000",
+  "modified": "2026-07-13 00:00:00.000000",
   "modified_by": "Administrator",
   "module": "webapp",
   "name": "Service",

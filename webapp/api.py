@@ -114,6 +114,7 @@ def submit_quote_form(
 	quote_request = frappe.get_doc(
 		{
 			"doctype": "Quote Request",
+			"naming_series": "AZ-QR-.YYYY.-.#####",
 			"customer_name": customer_name,
 			"phone": phone,
 			"email": email,

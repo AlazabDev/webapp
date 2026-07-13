@@ -5,6 +5,9 @@ app_description = "Official Alazab company website built on Frappe Framework"
 app_email = "info@alazab.com"
 app_license = "mit"
 
+before_install = "webapp.setup.install.before_install"
+after_install = "webapp.setup.install.after_install"
+
 website_generators = ["Service"]
 update_website_context = "webapp.overrides.website_context"
 home_page = "site"

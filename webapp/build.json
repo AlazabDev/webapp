@@ -1,0 +1,8 @@
+{
+    "public/dist/css/webapp.bundle.css":  [
+                                              "public/scss/webapp.bundle.scss"
+                                          ],
+    "public/dist/js/webapp.bundle.js":  [
+                                            "public/js/webapp.bundle.js"
+                                        ]
+}

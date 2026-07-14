@@ -28,8 +28,8 @@
   {% block meta %}{% endblock %}
 
   <!-- Favicons -->
-  <link href="/assets/webapp/frontend/img/favicon.png" rel="icon">
-  <link href="/assets/webapp/frontend/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="/assets/webapp/images/favicon.png" rel="icon">
+  <link href="/assets/webapp/images/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -39,16 +39,8 @@
   <!-- Vendor CSS Files -->
   {% if lang == 'ar' %}
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-  {% else %}
-  <link href="/assets/webapp/frontend/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   {% endif %}
-  <link href="/assets/webapp/frontend/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="/assets/webapp/frontend/vendor/aos/aos.css" rel="stylesheet">
-  <link href="/assets/webapp/frontend/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="/assets/webapp/frontend/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="/assets/webapp/frontend/css/main.css" rel="stylesheet">
+  <link href="/assets/webapp/css/webapp.bundle.css" rel="stylesheet">
 
   {% block head %}{% endblock %}
 </head>
@@ -68,16 +60,8 @@
   <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
-  <script src="/assets/webapp/frontend/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/assets/webapp/frontend/vendor/php-email-form/validate.js"></script>
-  <script src="/assets/webapp/frontend/vendor/aos/aos.js"></script>
-  <script src="/assets/webapp/frontend/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="/assets/webapp/frontend/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="/assets/webapp/frontend/vendor/swiper/swiper-bundle.min.js"></script>
-
   <!-- Main JS File -->
-  <script src="/assets/webapp/frontend/js/main.js"></script>
+  <script type="text/javascript" src="/assets/webapp/js/webapp.bundle.js"></script>
 
   {% block scripts %}{% endblock %}
 </body>

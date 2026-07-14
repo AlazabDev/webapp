@@ -1,0 +1,11 @@
+{
+    "private":  true,
+    "dependencies":  {
+                         "purecounterjs":  "^1.5.0",
+                         "bootstrap-icons":  "^1.11.3",
+                         "bootstrap":  "^5.3.3",
+                         "swiper":  "^11.1.4",
+                         "aos":  "^2.3.4",
+                         "glightbox":  "^3.3.0"
+                     }
+}
